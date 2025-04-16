@@ -2,7 +2,7 @@
     "name": "pixelcoda/typo3-text-flow",
     "type": "typo3-cms-extension",
     "description": "Optimizes text flow with dynamic hyphenation",
-    "license": "GPL-2.0-or-later",
+    "license": "MIT",
     "authors": [
       {
         "name": "Casian Blanaru",
@@ -11,7 +11,7 @@
       }
     ],
     "require": {
-      "typo3/cms-core": "^12.4"
+      "typo3/cms-core": "^12.0"
     },
     "extra": {
       "typo3/cms": {
