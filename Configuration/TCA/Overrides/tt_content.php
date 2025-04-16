@@ -23,21 +23,6 @@ $tempColumns = [
             'maxitems' => 1,
         ],
     ],
-    'tx_textflow_language' => [
-        'exclude' => 0,
-        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.tx_textflow_language',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.tx_textflow_language.all', 'all'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.tx_textflow_language.de', 'de'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.tx_textflow_language.en', 'en'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.tx_textflow_language.none', 'none'],
-            ],
-            'default' => 'all'
-        ]
-    ]
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
@@ -93,7 +78,7 @@ $GLOBALS['TCA']['tt_content']['types']['textflow'] = [
             --palette--;;general,
             --palette--;;headers,
             bodytext;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text,
-            tx_textflow_language,
+            enable_textflow,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
             --palette--;;access,
