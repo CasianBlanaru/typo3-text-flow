@@ -1,195 +1,144 @@
-# TextFlow TYPO3 Extension
+# TextFlow Extension for TYPO3
 
-## Overview
-
-TextFlow ist eine TYPO3-Erweiterung für intelligente Texttrennung und -optimierung in mehreren Sprachen. Sie verbessert die Lesbarkeit Ihrer Inhalte durch sprachspezifische Trennungsmuster unter Beibehaltung der HTML-Struktur und Textformatierung.
+A powerful text optimization extension for TYPO3 that provides intelligent hyphenation and text flow enhancement.
 
 ## Features
 
-- Mehrsprachige Unterstützung (Deutsch, Englisch, Französisch, Spanisch)
-- Intelligente Trennung basierend auf sprachspezifischen Mustern
-- Erhält HTML-Tags und Sonderzeichen
-- Berücksichtigt Groß-/Kleinschreibung
-- Konfigurierbar über Content-Element-Einstellungen
-- Performance-optimiert mit Pattern-Caching
-- Erweiterbare Muster-Bibliothek
+- Multi-language support for text hyphenation
+- Smart pattern-based hyphenation algorithm
+- HTML content preservation
+- Case-sensitive text processing
+- Performance optimization through caching
+- Backend module for text optimization
+- Frontend plugin for automatic text processing
+- Configurable content element
 
 ## Installation
+
+Install via composer:
 
 ```bash
 composer require pixelcoda/text-flow
 ```
 
-## Schnellstart-Anleitung
+## Configuration
 
-1. **Installation**
-   ```bash
-   composer require pixelcoda/text-flow
-   ```
+### Basic Setup
 
-2. **Extension aktivieren**
-   - Im TYPO3-Backend zur Extension-Verwaltung navigieren
-   - TextFlow aktivieren
-   - Cache leeren
+1. Install the extension through the Extension Manager
+2. Include the static TypoScript template
+3. Configure language settings in your site configuration
 
-3. **TypoScript einbinden**
-   - Im Template-Modul das Root-Template bearbeiten
-   - "Include Static" auswählen
-   - "TextFlow (text_flow)" hinzufügen
+### Content Element Settings
 
-4. **Basis-Konfiguration**
-   ```typoscript
-   page.10 = FLUIDTEMPLATE
-   page.10 {
-       templateRootPaths.10 = EXT:text_flow/Resources/Private/Templates/
-       partialRootPaths.10 = EXT:text_flow/Resources/Private/Partials/
-       layoutRootPaths.10 = EXT:text_flow/Resources/Private/Layouts/
-   }
-   ```
+Configure the TextFlow content element in your page properties:
 
-## Verwendung
-
-### 1. Im Content Element
-
-1. Content-Element erstellen/bearbeiten
-2. Im Tab "Erscheinungsbild" die TextFlow-Einstellungen finden
-3. Trennungsoptionen auswählen:
-   - `all`: Für alle Sprachen aktivieren
-   - `none`: Trennung deaktivieren
-   - `de`, `en`, `fr`, `es`: Nur für bestimmte Sprache aktivieren
-
-### 2. In Fluid Templates
-
-```html
-{namespace tf=PixelCoda\TextFlow\ViewHelpers}
-
-<!-- Einfache Verwendung -->
-<tf:process>{text}</tf:process>
-
-<!-- Mit Optionen -->
-<tf:process text="{text}" language="de" />
-
-<!-- In einer Schleife -->
-<f:for each="{texts}" as="text">
-    <tf:process>{text}</tf:process>
-</f:for>
-```
-
-### 3. In PHP
-
-```php
-use PixelCoda\TextFlow\Service\TextFlowService;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
-// Service instanziieren
-$textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
-
-// Einfache Verwendung
-$hyphenatedText = $textFlowService->hyphenate($text);
-
-// Mit Sprach-Option
-$hyphenatedText = $textFlowService->hyphenate($text, ['enable_textflow' => 'de']);
-
-// Mit zusätzlichen Optionen
-$options = [
-    'enable_textflow' => 'de',
-    'custom_setting' => 'value'
-];
-$hyphenatedText = $textFlowService->hyphenate($text, $options);
-```
-
-### 4. Backend-Modul
-
-1. Im TYPO3-Backend zu "Web > TextFlow" navigieren
-2. Trennungsmuster verwalten:
-   - Neue Muster hinzufügen
-   - Bestehende Muster bearbeiten
-   - Muster nach Sprachen filtern
-   - Vorschau der Trennung testen
-
-### 5. Programmatische Muster-Verwaltung
-
-```php
-use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
-$patternRepository = GeneralUtility::makeInstance(TextFlowPatternRepository::class);
-
-// Muster hinzufügen
-$patternRepository->addPattern('beispiel', 'de');
-
-// Muster für mehrere Sprachen
-$patterns = [
-    'de' => ['bei', 'spiel'],
-    'en' => ['ex', 'ample']
-];
-foreach ($patterns as $language => $languagePatterns) {
-    foreach ($languagePatterns as $pattern) {
-        $patternRepository->addPattern($pattern, $language);
+```typoscript
+tt_content.text_flow {
+    settings {
+        enableTextFlow = 1
+        defaultLanguage = en
     }
 }
 ```
 
-## Muster-Format
+## Usage
 
-Trennungsmuster müssen folgende Regeln befolgen:
-- Mindestlänge: 2 Zeichen
-- Maximallänge: 20 Zeichen
-- Erlaubte Zeichen: a-z, A-Z, äöüßÄÖÜ
-- Format: Einzelne Wortteile (z.B. 'bei', 'spiel')
+### In Fluid Templates
 
-## Cache-Management
+Use the ViewHelper to process text:
 
-### Cache leeren
+```html
+{namespace tf=PixelCoda\TextFlow\ViewHelpers}
 
-1. **Über Backend**
-   - TYPO3-Backend > Admin Tools > Maintenance
-   - "Clear all caches" wählen
+<tf:process text="{text}" />
+```
 
-2. **Programmatisch**
-   ```php
-   use TYPO3\CMS\Core\Cache\CacheManager;
-   use TYPO3\CMS\Core\Utility\GeneralUtility;
-
-   $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
-   $cacheManager->flushCachesByTag('text_flow');
-   ```
-
-## Fehlerbehebung
-
-### 1. Keine Trennung sichtbar
-- TextFlow in Content-Element aktiviert?
-- Sprache korrekt konfiguriert?
-- Cache geleert?
-- Mindestlänge (5 Zeichen) erreicht?
-
-### 2. Falsche Trennungen
-- Spracheinstellung überprüfen
-- Muster-Repository kontrollieren
-- Cache leeren und neu aufbauen
-
-### 3. Performance-Probleme
-- Pattern-Cache aktiviert?
-- Anzahl der Muster optimieren
-- Logging-Level anpassen
-
-## Logging
+### In PHP
 
 ```php
-// In eigenen Extensions
-$logger->warning('TextFlow Service: Empty text content');
-$logger->error('TextFlow Service: Invalid pattern format');
+use PixelCoda\TextFlow\Service\TextFlowService;
 
-// Log-Dateien prüfen
-var/log/typo3_*.log
+$textFlowService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TextFlowService::class);
+$processedText = $textFlowService->hyphenate($text);
 ```
+
+### Content Element
+
+1. Create a new content element
+2. Select "TextFlow" from the content type list
+3. Enter your text
+4. Configure language and hyphenation settings
+
+## Pattern Management
+
+### Adding Custom Patterns
+
+Create a pattern file in `Configuration/Patterns/`:
+
+```php
+return [
+    'pattern' => 'your-pattern',
+    'language' => 'en',
+    'priority' => 1
+];
+```
+
+### Pattern Format Rules
+
+- Use hyphens (-) to indicate possible break points
+- Patterns must be at least 2 characters long
+- Priority determines pattern application order
+
+## Development
+
+### Running Tests
+
+```bash
+composer test
+```
+
+### Code Style
+
+```bash
+composer cs-fix
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. No hyphenation visible:
+   - Check if TextFlow is enabled in TypoScript
+   - Verify language settings
+   - Clear TYPO3 cache
+
+2. Pattern not working:
+   - Check pattern format
+   - Verify language assignment
+   - Clear pattern cache
+
+### Logging
+
+TextFlow logs important operations to TYPO3's system log. Check the log for:
+- Pattern loading issues
+- Language configuration problems
+- Processing errors
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+GPL-2.0-or-later. See LICENSE file for details.
 
 ## Support
 
-Bei Fragen oder Problemen:
-- GitHub Issues: [Project Issues](https://github.com/pixelcoda/text-flow/issues)
-- E-Mail: support@pixelcoda.com
-
-## Lizenz
-
-Diese Extension ist unter GPL-2.0-or-later lizenziert. Details in der LICENSE-Datei.
+- Documentation: [docs.typo3.org](https://docs.typo3.org)
+- Issue Tracker: [GitHub Issues](https://github.com/pixelcoda/text-flow/issues)
+- Slack: #ext-text-flow on typo3.slack.com
