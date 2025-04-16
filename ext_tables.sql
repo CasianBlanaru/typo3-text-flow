@@ -13,5 +13,5 @@ CREATE TABLE tx_textflow_domain_model_textflowpattern (
 );
 
 CREATE TABLE tt_content (
-    enable_textflow varchar(255) DEFAULT 'all' NOT NULL
+    enable_textflow varchar(10) DEFAULT 'all' NOT NULL
 );

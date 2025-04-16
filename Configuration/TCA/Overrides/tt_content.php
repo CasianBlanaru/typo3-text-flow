@@ -19,6 +19,8 @@ $tempColumns = [
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.none', 'none'],
             ],
             'default' => 'all',
+            'size' => 1,
+            'maxitems' => 1,
         ],
     ],
     'tx_textflow_language' => [
