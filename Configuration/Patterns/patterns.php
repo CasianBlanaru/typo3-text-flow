@@ -1,0 +1,62 @@
+<?php
+return [
+    'de' => [
+        // Deutsche Trennungsmuster
+        ['pattern' => 'sch'],
+        ['pattern' => 'ch'],
+        ['pattern' => 'ck'],
+        ['pattern' => 'tz'],
+        ['pattern' => 'tsch'],
+        ['pattern' => 'ver'],
+        ['pattern' => 'be'],
+        ['pattern' => 'ge'],
+        ['pattern' => 'un'],
+        ['pattern' => 'er'],
+        ['pattern' => 'ent'],
+        ['pattern' => 'emp'],
+        ['pattern' => 'ung'],
+        ['pattern' => 'lich'],
+        ['pattern' => 'isch'],
+        ['pattern' => 'ig'],
+    ],
+    'en' => [
+        // Englische Trennungsmuster
+        ['pattern' => 'th'],
+        ['pattern' => 'ch'],
+        ['pattern' => 'sh'],
+        ['pattern' => 'ing'],
+        ['pattern' => 'tion'],
+        ['pattern' => 'pre'],
+        ['pattern' => 'post'],
+        ['pattern' => 'un'],
+        ['pattern' => 're'],
+        ['pattern' => 'dis'],
+        ['pattern' => 'able'],
+        ['pattern' => 'ment'],
+    ],
+    'fr' => [
+        // Französische Trennungsmuster
+        ['pattern' => 'ch'],
+        ['pattern' => 'ph'],
+        ['pattern' => 'gn'],
+        ['pattern' => 'tion'],
+        ['pattern' => 'pre'],
+        ['pattern' => 'de'],
+        ['pattern' => 're'],
+        ['pattern' => 'ment'],
+        ['pattern' => 'eur'],
+        ['pattern' => 'euse'],
+    ],
+    'es' => [
+        // Spanische Trennungsmuster
+        ['pattern' => 'ch'],
+        ['pattern' => 'll'],
+        ['pattern' => 'rr'],
+        ['pattern' => 'ción'],
+        ['pattern' => 'pre'],
+        ['pattern' => 'des'],
+        ['pattern' => 'mente'],
+        ['pattern' => 'dad'],
+        ['pattern' => 'idad'],
+    ],
+]; 

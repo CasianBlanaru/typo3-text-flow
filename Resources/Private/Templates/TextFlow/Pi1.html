@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<div class="textflow-content">
+    <f:if condition="{hyphenatedText}">
+        <p>{hyphenatedText -> f:format.raw()}</p>
+    </f:if>
+    <f:else>
+        <p>No text provided.</p>
+    </f:else>
+</div>
+</html>

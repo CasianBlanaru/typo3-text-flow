@@ -1,0 +1,12 @@
+parameters:
+    level: 8
+    paths:
+        - Classes
+        - Configuration
+        - Tests
+    excludePaths:
+        - vendor
+    ignoreErrors:
+        - '#Call to an undefined method [a-zA-Z0-9\\_]+::(findByLanguage|toArray)\(\)#'
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false 

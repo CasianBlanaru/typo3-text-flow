@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g fill="none" stroke="#333" stroke-width="1">
+        <!-- Kreis -->
+        <circle cx="8" cy="8" r="7"/>
+        <!-- Wellenförmige Textlinie -->
+        <path d="M4 6 Q6 8 8 6 Q10 4 12 6"/>
+        <!-- Trennstrich -->
+        <line x1="8" y1="5" x2="8" y2="7"/>
+    </g>
+</svg> 

@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="text-flow-content">
+        <f:if condition="{text}">
+            <f:then>
+                <div class="text-content">
+                    <f:format.html>{text}</f:format.html>
+                </div>
+                <f:if condition="{settings.showWordCount}">
+                    <div class="word-count">
+                        <f:translate key="wordCount" />: {text -> f:count.words()}
+                    </div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <div class="no-content">
+                    <f:translate key="noContent" />
+                </div>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+</html> 

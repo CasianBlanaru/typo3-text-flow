@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g fill="none" stroke="#333" stroke-width="1">
+        <!-- Tabelle -->
+        <rect x="3" y="3" width="10" height="10"/>
+        <line x1="3" y1="7" x2="13" y2="7"/>
+        <line x1="8" y1="3" x2="8" y2="13"/>
+        <!-- Trennstrich -->
+        <line x1="7.5" y1="9" x2="8.5" y2="9"/>
+    </g>
+</svg> 

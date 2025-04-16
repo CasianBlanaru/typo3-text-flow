@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="textflow-content">
+        <f:if condition="{data.header}">
+            <header>
+                <f:switch expression="{data.header_layout}">
+                    <f:case value="1"><h1><tf:process>{data.header}</tf:process></h1></f:case>
+                    <f:case value="2"><h2><tf:process>{data.header}</tf:process></h2></f:case>
+                    <f:case value="3"><h3><tf:process>{data.header}</tf:process></h3></f:case>
+                    <f:case value="4"><h4><tf:process>{data.header}</tf:process></h4></f:case>
+                    <f:case value="5"><h5><tf:process>{data.header}</tf:process></h5></f:case>
+                    <f:case value="6"><h6><tf:process>{data.header}</tf:process></h6></f:case>
+                    <f:defaultCase><h2><tf:process>{data.header}</tf:process></h2></f:defaultCase>
+                </f:switch>
+            </header>
+        </f:if>
+        
+        <f:if condition="{data.subheader}">
+            <div class="subheader">
+                <tf:process>{data.subheader}</tf:process>
+            </div>
+        </f:if>
+        
+        <div class="bodytext">
+            <tf:process>{data.bodytext -> f:format.html()}</tf:process>
+        </div>
+    </div>
+</f:section>
+</html> 

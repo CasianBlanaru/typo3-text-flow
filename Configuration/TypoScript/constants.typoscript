@@ -1,0 +1,25 @@
+plugin.tx_textflow {
+    view {
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:text_flow/Resources/Private/Templates/
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:text_flow/Resources/Private/Partials/
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:text_flow/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_textflow//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+
+plugin.tx_pixelcodatextflow {
+    view {
+        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:pixelcoda_textflow/Resources/Private/Templates/
+        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:pixelcoda_textflow/Resources/Private/Partials/
+        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:pixelcoda_textflow/Resources/Private/Layouts/
+    }
+}
