@@ -25,6 +25,7 @@ plugin.tx_textflow {
         showWordCount = 1
         showDebugInformation = 1
         cacheLifetime = 3600
+        defaultLanguage = de
     }
     
     features {
@@ -118,9 +119,14 @@ plugin.tx_textflow_show {
     settings < plugin.tx_textflow.settings
 }
 
-# Include CSS
-page.includeCSS {
-    textflow = EXT:text_flow/Resources/Public/CSS/textflow.css
+# Include CSS and JavaScript
+page {
+    includeCSS {
+        textflow = EXT:text_flow/Resources/Public/Css/textflow.css
+    }
+    includeJSFooter {
+        textflow = EXT:text_flow/Resources/Public/JavaScript/textflow.js
+    }
 }
 
 # Configure Content Element rendering
