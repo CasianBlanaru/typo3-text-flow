@@ -23,10 +23,27 @@ $tempColumns = [
             'maxitems' => 1,
         ],
     ],
+    'tx_textflow_enable' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow',
+        'config' => [
+            'type' => 'check',
+            'default' => 0,
+            'items' => [
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.enable', '']
+            ]
+        ]
+    ]
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'enable_textflow', '', 'after:bodytext');
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    'tx_textflow_enable',
+    'text,textmedia,textpic,table,bullets,header',
+    'after:header'
+);
 
 // Configure Plugin
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['textflow_show'] = 'layout,select_key,pages,recursive';
@@ -79,6 +96,7 @@ $GLOBALS['TCA']['tt_content']['types']['textflow'] = [
             --palette--;;headers,
             bodytext;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text,
             enable_textflow,
+            tx_textflow_enable,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
             --palette--;;access,
@@ -102,27 +120,4 @@ ExtensionManagementUtility::addPiFlexFormValue(
 ExtensionManagementUtility::addPiFlexFormValue(
     'textflow_textoptimizer',
     'FILE:EXT:text_flow/Configuration/FlexForms/flexform.xml'
-);
-
-// Add TextFlow enable field to tt_content
-ExtensionManagementUtility::addTCAcolumns('tt_content', [
-    'tx_textflow_enable' => [
-        'exclude' => 0,
-        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow',
-        'config' => [
-            'type' => 'check',
-            'default' => 0,
-            'items' => [
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.enable', '']
-            ]
-        ]
-    ]
-]);
-
-// Add TextFlow field to all text-based content elements
-ExtensionManagementUtility::addToAllTCAtypes(
-    'tt_content',
-    'tx_textflow_enable',
-    'text,textmedia,textpic,table,bullets,header',
-    'after:header'
 );
