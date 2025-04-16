@@ -4,7 +4,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Text Flow Settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:flexforms.sheet_title</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
@@ -19,7 +19,7 @@
                     </settings.enableHyphenation>
                     <settings.language>
                         <TCEforms>
-                            <label>Language</label>
+                            <label>LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:flexforms.language</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -33,7 +33,6 @@
                                         <numIndex index="1">en</numIndex>
                                     </numIndex>
                                 </items>
-                                <default>de</default>
                             </config>
                         </TCEforms>
                     </settings.language>

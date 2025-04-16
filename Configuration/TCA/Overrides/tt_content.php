@@ -29,21 +29,23 @@ ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'enable_textflow', ''
 
 // Register Plugin
 ExtensionUtility::registerPlugin(
-    'PixelCoda.TextFlow',
+    'TextFlow',
     'Show',
-    'Text Flow Plugin',
+    'Text Flow: Show',
+    'text-flow-icon'
+);
+
+// Register Text Optimizer Plugin
+ExtensionUtility::registerPlugin(
+    'TextFlow',
+    'TextOptimizer',
+    'Text Flow: Optimizer',
     'text-flow-icon'
 );
 
 // Configure Plugin
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['textflow_show'] = 'layout,select_key,pages,recursive';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['textflow_show'] = 'pi_flexform';
-
-// Add FlexForm
-ExtensionManagementUtility::addPiFlexFormValue(
-    'textflow_show',
-    'FILE:EXT:text_flow/Configuration/FlexForms/flexform.xml'
-);
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['textflow_textoptimizer'] = 'layout,select_key,pages,recursive';
 
 // Configure the plugin fields
 $GLOBALS['TCA']['tt_content']['types']['textflow_show'] = [
@@ -113,17 +115,11 @@ $GLOBALS['TCA']['tt_content']['types']['textflow'] = [
     ],
 ];
 
-// Register Text Optimizer Plugin
-ExtensionUtility::registerPlugin(
-    'PixelCoda.TextFlow',
-    'TextOptimizer',
-    'Text Flow Optimizer',
-    'text-flow-icon'
+// Add FlexForm
+ExtensionManagementUtility::addPiFlexFormValue(
+    'textflow_show',
+    'FILE:EXT:text_flow/Configuration/FlexForms/flexform.xml'
 );
-
-// Configure Text Optimizer Plugin
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['textflow_textoptimizer'] = 'layout,select_key,pages,recursive';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['textflow_textoptimizer'] = 'pi_flexform';
 
 // Add FlexForm for Text Optimizer
 ExtensionManagementUtility::addPiFlexFormValue(

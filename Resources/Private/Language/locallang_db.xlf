@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-03-20T12:00:00Z" product-name="text_flow">
+        <header/>
+        <body>
+            <trans-unit id="flexforms.sheet_title">
+                <source>Text Flow Settings</source>
+            </trans-unit>
+            <trans-unit id="flexforms.language">
+                <source>Language</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff> 
