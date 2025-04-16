@@ -19,7 +19,6 @@ plugin.tx_textflow {
     }
     
     settings {
-        # Default text processing settings
         enableHyphenation = 1
         enableSmartQuotes = 1
         showWordCount = 1
@@ -27,22 +26,27 @@ plugin.tx_textflow {
         cacheLifetime = 3600
         defaultLanguage = de
     }
-    
-    features {
-        skipDefaultArguments = 1
-        requireCHashArgumentForActionArguments = 1
-    }
 }
 
 # TextFlow integration only for specific content elements with enabled text flow
 [traverse(data, "tx_textflow_enable") == "1"]
-    lib.contentElement {
-        stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-        stdWrap.postUserFunc {
+    tt_content {
+        text.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
+        text.stdWrap.postUserFunc {
             enable = 1
             respectTemplateLayout = 1
             preserveStructure = 1
         }
+        
+        textmedia.stdWrap.postUserFunc < .text.stdWrap.postUserFunc
+        textpic.stdWrap.postUserFunc < .text.stdWrap.postUserFunc
+        header.stdWrap.postUserFunc < .text.stdWrap.postUserFunc
+        
+        # Process only text fields
+        text.stdWrap.dataWrap.field = bodytext
+        textmedia.stdWrap.dataWrap.field = bodytext
+        textpic.stdWrap.dataWrap.field = bodytext
+        header.stdWrap.dataWrap.field = header
     }
 [end]
 
