@@ -3,7 +3,6 @@ declare(strict_types=1);
 defined('TYPO3') or die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 // Configure the field
 $tempColumns = [
@@ -41,22 +40,6 @@ $tempColumns = [
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'enable_textflow', '', 'after:bodytext');
-
-// Register Plugin
-ExtensionUtility::registerPlugin(
-    'TextFlow',
-    'Show',
-    'Text Flow: Show',
-    'text-flow-icon'
-);
-
-// Register Text Optimizer Plugin
-ExtensionUtility::registerPlugin(
-    'TextFlow',
-    'TextOptimizer',
-    'Text Flow: Optimizer',
-    'text-flow-icon'
-);
 
 // Configure Plugin
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['textflow_show'] = 'layout,select_key,pages,recursive';
