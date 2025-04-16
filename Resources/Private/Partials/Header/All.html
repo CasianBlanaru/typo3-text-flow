@@ -1,0 +1,18 @@
+<div class="ce-header">
+    <f:render partial="Header/Header" arguments="{
+        header: header,
+        layout: layout,
+        positionClass: '{f:if(condition: header_position, then: \'ce-header-position-{header_position}\')}',
+        link: link,
+        default: settings.defaultHeaderType}" />
+    
+    <f:render partial="Header/SubHeader" arguments="{
+        subheader: subheader,
+        layout: layout,
+        positionClass: '{f:if(condition: header_position, then: \'ce-header-position-{header_position}\')}',
+        default: settings.defaultHeaderType}" />
+    
+    <f:render partial="Header/Date" arguments="{
+        date: date,
+        positionClass: '{f:if(condition: header_position, then: \'ce-header-position-{header_position}\')}'}" />
+</div> 
