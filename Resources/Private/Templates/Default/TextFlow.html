@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="text-flow-content">
+        <div class="text-flow-output">
+            <f:if condition="{data.bodytext}">
+                <f:then>
+                    <p><f:format.raw>{data.bodytext}</f:format.raw></p>
+                </f:then>
+                <f:else>
+                    <p>Kein Text vorhanden.</p>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+</html> 

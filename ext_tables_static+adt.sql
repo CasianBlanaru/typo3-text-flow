@@ -1,0 +1,15 @@
+INSERT INTO tx_textflow_domain_model_textflowpattern (pid, language, pattern) VALUES
+(0, 'de', 'ung'),
+(0, 'de', 'ver'),
+(0, 'de', 'heit'),
+(0, 'de', 'keit'),
+(0, 'de', 'lich'),
+(0, 'de', 'isch'),
+(0, 'de', 'bar'),
+(0, 'en', 'ing'),
+(0, 'en', 'tion'),
+(0, 'en', 'able'),
+(0, 'en', 'ment'),
+(0, 'en', 'ness'),
+(0, 'en', 'ship'),
+(0, 'en', 'less'); 

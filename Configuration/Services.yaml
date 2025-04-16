@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  PixelCoda\TextFlow\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  PixelCoda\TextFlow\Controller\TextFlowController:
+    public: true
+    tags: ['backend.controller']
+
+  PixelCoda\TextFlow\Service\TextFlowService:
+    public: true 

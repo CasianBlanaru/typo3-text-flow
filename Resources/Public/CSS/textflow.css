@@ -1,0 +1,29 @@
+/* TextFlow - Minimal styles for hyphenation */
+.tx-text-flow {
+    /* Enable hyphenation */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    
+    /* Language setting for correct hyphenation */
+    lang: de;
+}
+
+/* Essential styles for text display */
+.tx-text-flow .text-container {
+    line-height: 1.6;
+}
+
+/* Basic styles for error messages */
+.tx-text-flow .alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.tx-text-flow .alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}

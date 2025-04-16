@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Text Flow Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.enableHyphenation>
+                        <TCEforms>
+                            <label>Enable Hyphenation</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.enableHyphenation>
+                    <settings.language>
+                        <TCEforms>
+                            <label>Language</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">German</numIndex>
+                                        <numIndex index="1">de</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">English</numIndex>
+                                        <numIndex index="1">en</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>de</default>
+                            </config>
+                        </TCEforms>
+                    </settings.language>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure> 

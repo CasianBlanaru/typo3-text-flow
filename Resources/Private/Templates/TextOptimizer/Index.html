@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="text-flow-container">
+        <div class="tx-text-flow">
+            <f:form action="optimize" name="textOptimizer" class="text-flow-form">
+                <div class="form-group">
+                    <label for="text" class="form-label">
+                        <f:translate key="form.text.label" />
+                    </label>
+                    <f:form.textarea 
+                        id="text"
+                        name="text" 
+                        class="form-textarea" 
+                        rows="5"
+                        placeholder="{f:translate(key: 'form.text.placeholder')}"
+                        additionalAttributes="{
+                            'aria-describedby': 'textHelpBlock'
+                        }" 
+                    />
+                    <small id="textHelpBlock" class="form-text">
+                        <f:translate key="form.help.text" />
+                    </small>
+                </div>
+                <div class="form-actions">
+                    <f:form.submit 
+                        value="{f:translate(key: 'form.submit.label')}" 
+                        class="btn-submit" />
+                </div>
+            </f:form>
+
+            <f:if condition="{optimizedText}">
+                <div class="result-container">
+                    <h3 class="result-title"><f:translate key="result.optimized.title" /></h3>
+                    <div class="result-text">
+                        <f:format.raw>{optimizedText}</f:format.raw>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+</html> 

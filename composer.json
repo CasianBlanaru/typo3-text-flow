@@ -1,0 +1,36 @@
+{
+    "name": "pixelcoda/text-flow",
+    "type": "typo3-cms-extension",
+    "description": "Optimizes text flow with dynamic hyphenation",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+      {
+        "name": "Casian Blanaru",
+        "email": "casian@pixelcoda.com",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+      "typo3/cms-core": "^12.4"
+    },
+    "extra": {
+      "typo3/cms": {
+        "extension-key": "text_flow"
+      }
+    },
+    "autoload": {
+      "psr-4": {
+        "PixelCoda\\TextFlow\\": "Classes/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "PixelCoda\\TextFlow\\Tests\\": "Tests/"
+      }
+    },
+    "require-dev": {
+      "typo3/testing-framework": "^8.0",
+      "phpstan/phpstan": "^1.10",
+      "typo3/coding-standards": "^0.7"
+    }
+  }

@@ -1,0 +1,3 @@
+# Include all TypoScript configurations
+@import 'EXT:text_flow/Configuration/TypoScript/Page/*.typoscript'
+@import 'EXT:text_flow/Configuration/TypoScript/*.typoscript' 
