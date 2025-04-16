@@ -41,6 +41,7 @@ plugin.tx_textflow {
         stdWrap.postUserFunc {
             enable = 1
             respectTemplateLayout = 1
+            preserveStructure = 1
         }
     }
 [end]
