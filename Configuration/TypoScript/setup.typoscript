@@ -34,58 +34,16 @@ plugin.tx_textflow {
     }
 }
 
-# TextFlow integration for all content elements
-lib.contentElement {
-    stdWrap {
-        postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-        postUserFunc.enable = 1
-    }
-    
-    # Apply TextFlow to header
-    10 = TEXT
-    10 {
-        field = header
+# TextFlow integration only for specific content elements with enabled text flow
+[traverse(data, "tx_textflow_enable") == "1"]
+    lib.contentElement {
         stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-        stdWrap.postUserFunc.enable = 1
+        stdWrap.postUserFunc {
+            enable = 1
+            respectTemplateLayout = 1
+        }
     }
-    
-    # Apply TextFlow to subheader
-    20 = TEXT
-    20 {
-        field = subheader
-        stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-        stdWrap.postUserFunc.enable = 1
-    }
-    
-    # Apply TextFlow to bodytext
-    30 = TEXT
-    30 {
-        field = bodytext
-        stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-        stdWrap.postUserFunc.enable = 1
-    }
-}
-
-tt_content {
-    # Apply TextFlow to all text content elements
-    text.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    text.stdWrap.postUserFunc.enable = 1
-    
-    textmedia.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    textmedia.stdWrap.postUserFunc.enable = 1
-    
-    textpic.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    textpic.stdWrap.postUserFunc.enable = 1
-    
-    table.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    table.stdWrap.postUserFunc.enable = 1
-    
-    bullets.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    bullets.stdWrap.postUserFunc.enable = 1
-    
-    header.stdWrap.postUserFunc = PixelCoda\TextFlow\Service\TextFlowService->hyphenate
-    header.stdWrap.postUserFunc.enable = 1
-}
+[end]
 
 # TextOptimizer Plugin Configuration
 plugin.tx_textflow_textoptimizer = USER
@@ -94,12 +52,6 @@ plugin.tx_textflow_textoptimizer {
     extensionName = TextFlow
     pluginName = TextOptimizer
     vendorName = PixelCoda
-    
-    switchableControllerActions {
-        TextFlow {
-            1 = optimize
-        }
-    }
     
     view < plugin.tx_textflow.view
     persistence < plugin.tx_textflow.persistence
@@ -129,26 +81,16 @@ page {
     }
 }
 
-# Configure Content Element rendering
+# Configure TextFlow Content Element
 tt_content {
     textflow =< lib.contentElement
     textflow {
         templateName = TextFlow
-        templateRootPaths {
-            0 = EXT:text_flow/Resources/Private/Templates/Default/
-            10 = {$plugin.tx_textflow.view.templateRootPath}Default/
-        }
-        partialRootPaths {
-            0 = EXT:text_flow/Resources/Private/Partials/
-            10 = {$plugin.tx_textflow.view.partialRootPath}
-        }
-        layoutRootPaths {
-            0 = EXT:text_flow/Resources/Private/Layouts/
-            10 = {$plugin.tx_textflow.view.layoutRootPath}
-        }
+        
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
         }
+        
         settings {
             defaultHeaderType = 2
         }

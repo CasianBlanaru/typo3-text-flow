@@ -13,5 +13,6 @@ CREATE TABLE tx_textflow_domain_model_textflowpattern (
 );
 
 CREATE TABLE tt_content (
-    enable_textflow varchar(10) DEFAULT 'all' NOT NULL
+    enable_textflow varchar(10) DEFAULT 'all' NOT NULL,
+    tx_textflow_enable tinyint(4) unsigned DEFAULT '0' NOT NULL
 );

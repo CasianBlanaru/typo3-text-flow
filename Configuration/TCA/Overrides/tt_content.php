@@ -103,3 +103,26 @@ ExtensionManagementUtility::addPiFlexFormValue(
     'textflow_textoptimizer',
     'FILE:EXT:text_flow/Configuration/FlexForms/flexform.xml'
 );
+
+// Add TextFlow enable field to tt_content
+ExtensionManagementUtility::addTCAcolumns('tt_content', [
+    'tx_textflow_enable' => [
+        'exclude' => 0,
+        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow',
+        'config' => [
+            'type' => 'check',
+            'default' => 0,
+            'items' => [
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.enable', '']
+            ]
+        ]
+    ]
+]);
+
+// Add TextFlow field to all text-based content elements
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    'tx_textflow_enable',
+    'text,textmedia,textpic,table,bullets,header',
+    'after:header'
+);
