@@ -8,15 +8,15 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 $tempColumns = [
     'enable_textflow' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow',
+        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.all', 'all'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.de', 'de'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.en', 'en'],
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.none', 'none'],
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.all', 'all'],
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.de', 'de'],
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.en', 'en'],
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.none', 'none'],
             ],
             'default' => 'all',
             'size' => 1,
