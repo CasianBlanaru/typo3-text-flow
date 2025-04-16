@@ -55,3 +55,6 @@ defined('TYPO3') or die();
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['text_flow'] = 
         \PixelCoda\TextFlow\Hooks\PatternInstallerHook::class;
 })();
+
+// Add ViewHelper namespace
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'] = ['PixelCoda\\TextFlow\\ViewHelpers'];
