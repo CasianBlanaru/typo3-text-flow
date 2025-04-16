@@ -4,8 +4,6 @@ A powerful text optimization extension for TYPO3 that provides intelligent hyphe
 
 ## Features
 
-
-
 - Multi-language support for text hyphenation
 - Smart pattern-based hyphenation algorithm
 - HTML content preservation
