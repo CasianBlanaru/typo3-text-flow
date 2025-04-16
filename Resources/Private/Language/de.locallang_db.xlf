@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2024-04-16T12:00:00Z" product-name="text_flow">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2024-04-16T12:00:00Z" product-name="text_flow">
         <header/>
         <body>
             <trans-unit id="tt_content.tx_textflow_language">
                 <source>Language Settings</source>
+                <target>Spracheinstellungen</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_textflow_language.all">
                 <source>All Languages</source>
+                <target>Alle Sprachen</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_textflow_language.de">
                 <source>German</source>
+                <target>Deutsch</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_textflow_language.en">
                 <source>English</source>
+                <target>Englisch</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_textflow_language.none">
                 <source>Disabled</source>
+                <target>Deaktiviert</target>
             </trans-unit>
         </body>
     </file>

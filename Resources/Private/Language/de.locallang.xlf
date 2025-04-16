@@ -1,128 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2024-03-20T12:00:00Z" product-name="text_flow">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2024-04-16T12:00:00Z" product-name="text_flow">
         <header/>
         <body>
-            <!-- Plugin Labels -->
-            <trans-unit id="plugin.textflow.title">
+            <trans-unit id="mlang_tabs_tab">
                 <source>TextFlow</source>
                 <target>TextFlow</target>
             </trans-unit>
-            <trans-unit id="plugin.textflow.description">
-                <source>Optimize text flow with intelligent hyphenation</source>
-                <target>Optimieren Sie den Textfluss mit intelligenter Silbentrennung</target>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source>Text optimization and hyphenation</source>
+                <target>Textoptimierung und Silbentrennung</target>
             </trans-unit>
-            <trans-unit id="plugin.textoptimizer.title">
-                <source>Text Optimizer</source>
-                <target>Text-Optimierer</target>
+            <trans-unit id="mlang_labels_tablabel">
+                <source>Manage text flow settings</source>
+                <target>TextFlow-Einstellungen verwalten</target>
             </trans-unit>
-            <trans-unit id="plugin.textoptimizer.description">
-                <source>Tool for text optimization and hyphenation</source>
-                <target>Werkzeug zur Textoptimierung und Silbentrennung</target>
+            <trans-unit id="settings.enableTextFlow">
+                <source>Enable TextFlow</source>
+                <target>TextFlow aktivieren</target>
             </trans-unit>
-
-            <!-- Form Labels -->
-            <trans-unit id="form.text.label">
-                <source>Text to optimize:</source>
-                <target>Zu optimierender Text:</target>
-            </trans-unit>
-            <trans-unit id="form.text.placeholder">
-                <source>Enter your text here...</source>
-                <target>Geben Sie hier Ihren Text ein...</target>
-            </trans-unit>
-            <trans-unit id="form.submit.label">
-                <source>Optimize Text</source>
-                <target>Text optimieren</target>
-            </trans-unit>
-            <trans-unit id="form.help.text">
-                <source>Please enter the text you want to optimize.</source>
-                <target>Bitte geben Sie den zu optimierenden Text ein.</target>
-            </trans-unit>
-
-            <!-- Result Labels -->
-            <trans-unit id="result.original.title">
-                <source>Original Text</source>
-                <target>Original-Text</target>
-            </trans-unit>
-            <trans-unit id="result.optimized.title">
-                <source>Optimized Text</source>
-                <target>Optimierter Text</target>
-            </trans-unit>
-            <trans-unit id="result.empty.text">
-                <source>No text available for optimization</source>
-                <target>Kein Text zur Optimierung verfügbar</target>
-            </trans-unit>
-
-            <!-- Error Messages -->
-            <trans-unit id="error.no_text">
-                <source>Please enter a text for optimization</source>
-                <target>Bitte geben Sie einen Text zur Optimierung ein</target>
-            </trans-unit>
-            <trans-unit id="error.processing">
-                <source>Error while processing the text</source>
-                <target>Fehler bei der Textverarbeitung</target>
-            </trans-unit>
-
-            <!-- FlexForm Labels -->
-            <trans-unit id="flexform.settings">
-                <source>Settings</source>
-                <target>Einstellungen</target>
-            </trans-unit>
-            <trans-unit id="flexform.language">
+            <trans-unit id="settings.language">
                 <source>Language</source>
                 <target>Sprache</target>
             </trans-unit>
-            <trans-unit id="flexform.language.auto">
-                <source>Automatic</source>
-                <target>Automatisch</target>
+            <trans-unit id="settings.language.all">
+                <source>All languages</source>
+                <target>Alle Sprachen</target>
             </trans-unit>
-            <trans-unit id="flexform.language.de">
-                <source>German</source>
-                <target>Deutsch</target>
+            <trans-unit id="settings.language.none">
+                <source>Disabled</source>
+                <target>Deaktiviert</target>
             </trans-unit>
-            <trans-unit id="flexform.language.en">
-                <source>English</source>
-                <target>Englisch</target>
+            <trans-unit id="error.invalidLanguage">
+                <source>Invalid language code</source>
+                <target>Ungültiger Sprachcode</target>
             </trans-unit>
-            <trans-unit id="flexform.language.fr">
-                <source>French</source>
-                <target>Französisch</target>
-            </trans-unit>
-            <trans-unit id="flexform.language.es">
-                <source>Spanish</source>
-                <target>Spanisch</target>
-            </trans-unit>
-
-            <!-- Backend Module Labels -->
-            <trans-unit id="module.title">
-                <source>TextFlow Management</source>
-                <target>TextFlow-Verwaltung</target>
-            </trans-unit>
-            <trans-unit id="module.description">
-                <source>Manage text optimization settings and patterns</source>
-                <target>Verwalten Sie Textoptimierungseinstellungen und Trennmuster</target>
-            </trans-unit>
-            <trans-unit id="module.patterns">
-                <source>Hyphenation Patterns</source>
-                <target>Trennungsmuster</target>
-            </trans-unit>
-            <trans-unit id="module.settings">
-                <source>Configuration</source>
-                <target>Konfiguration</target>
-            </trans-unit>
-
-            <!-- Statistics Labels -->
-            <trans-unit id="stats.words">
-                <source>Words</source>
-                <target>Wörter</target>
-            </trans-unit>
-            <trans-unit id="stats.characters">
-                <source>Characters</source>
-                <target>Zeichen</target>
-            </trans-unit>
-            <trans-unit id="stats.hyphenations">
-                <source>Hyphenations</source>
-                <target>Trennungen</target>
+            <trans-unit id="error.processingFailed">
+                <source>Text processing failed</source>
+                <target>Textverarbeitung fehlgeschlagen</target>
             </trans-unit>
         </body>
     </file>

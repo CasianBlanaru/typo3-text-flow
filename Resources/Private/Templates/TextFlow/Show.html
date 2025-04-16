@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:textflow="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/Pixelcoda/TextFlow/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <f:layout name="Default" />
@@ -9,10 +9,27 @@
 </f:section>
 
 <f:section name="Main">
-    <div class="tx-textflow">
-        <textflow:optimize language="{settings.language}" text="{text}" enableJs="true">
-            <f:format.raw>{text}</f:format.raw>
-        </textflow:optimize>
+    <div class="text-flow-content">
+        <f:if condition="{text}">
+            <f:then>
+                <div class="text-flow-output">
+                    <f:format.raw>{text}</f:format.raw>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="text-flow-form">
+                    <f:form action="optimize" controller="TextFlow" method="post">
+                        <div class="form-group">
+                            <label for="text">Text zum Optimieren:</label>
+                            <f:form.textarea class="form-control" id="text" name="text" rows="10" />
+                        </div>
+                        <div class="form-group">
+                            <f:form.submit value="Text optimieren" class="btn btn-primary" />
+                        </div>
+                    </f:form>
+                </div>
+            </f:else>
+        </f:if>
     </div>
 </f:section>
 </html> 
