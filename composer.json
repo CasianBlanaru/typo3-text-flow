@@ -1,5 +1,5 @@
 {
-    "name": "pixelcoda/text-flow",
+    "name": "pixelcoda/typo3-text-flow",
     "type": "typo3-cms-extension",
     "description": "Optimizes text flow with dynamic hyphenation",
     "license": "GPL-2.0-or-later",
