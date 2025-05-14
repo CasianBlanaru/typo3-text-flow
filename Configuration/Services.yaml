@@ -15,11 +15,8 @@ services:
   PixelCoda\TextFlow\Service\TextFlowService:
     public: true
 
-  PixelCoda\TextFlow\Install\PatternInstaller:
-    public: true
-
-  PixelCoda\TextFlow\Command\PatternCommand:
+  PixelCoda\TextFlow\Command\ImportPatternsCommand:
     tags:
       - name: 'console.command'
         command: 'textflow:import-patterns'
-        description: 'Import hyphenation patterns for TextFlow'
+        description: 'Imports additional language patterns for TextFlow'

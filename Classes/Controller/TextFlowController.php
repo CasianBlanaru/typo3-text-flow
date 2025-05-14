@@ -7,7 +7,6 @@ use PixelCoda\TextFlow\Service\TextFlowService;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
 
 /**
  * Controller for TextFlow plugin.
@@ -16,13 +15,11 @@ class TextFlowController extends ActionController
 {
     protected TextFlowService $textFlowService;
     protected LoggerInterface $logger;
-    protected TextFlowPatternRepository $patternRepository;
 
-    public function __construct(TextFlowService $textFlowService, LoggerInterface $logger, TextFlowPatternRepository $patternRepository)
+    public function __construct(TextFlowService $textFlowService, LoggerInterface $logger)
     {
         $this->textFlowService = $textFlowService;
         $this->logger = $logger;
-        $this->patternRepository = $patternRepository;
     }
 
     /**
@@ -42,9 +39,37 @@ class TextFlowController extends ActionController
     {
         $contentObject = $this->configurationManager->getContentObject()->data;
         $text = $contentObject['bodytext'] ?? '';
-        $hyphenatedText = $this->textFlowService->hyphenate($text, $contentObject);
+
+        $this->logger->debug('TextFlow showAction: Processing text', [
+            'text_length' => strlen($text),
+            'content_uid' => $contentObject['uid'] ?? 'unknown'
+        ]);
+
+        // Check for debug parameter in URL - try different parameter names
+        $debugMode = (bool)GeneralUtility::_GP('textflow_debug');
+        if (!$debugMode) {
+            $debugMode = (bool)GeneralUtility::_GP('debug_textflow');
+        }
+        if (!$debugMode) {
+            $debugMode = (bool)GeneralUtility::_GP('debug');
+        }
+
+        $this->logger->debug('TextFlow: Debug mode = ' . ($debugMode ? 'ON' : 'OFF'));
+
+        // Enable text flow by default
+        $conf = [
+            'enable' => 1,
+            'preserveStructure' => 1,
+            'debug' => true // Immer Debug-Modus für Tests aktivieren
+        ];
+
+        $hyphenatedText = $this->textFlowService->hyphenate($text, $conf);
+
         $this->view->assign('hyphenatedText', $hyphenatedText);
-        
+        $this->view->assign('text', $text);
+        $this->view->assign('settings', $this->settings);
+        $this->view->assign('debugMode', $debugMode);
+
         return $this->htmlResponse();
     }
 
@@ -53,48 +78,39 @@ class TextFlowController extends ActionController
      */
     public function optimizeAction(): ResponseInterface
     {
-        $settings = $this->settings;
-        $text = $this->request->hasArgument('text') ? $this->request->getArgument('text') : '';
-        $language = $this->request->hasArgument('language') ? $this->request->getArgument('language') : 'de';
-        
-        $processedText = $this->textFlowService->hyphenate($text, [
-            'enable' => true,
-            'enable_textflow' => $language,
-            'preserveStructure' => true
-        ]);
-        
+        $text = '';
+
+        if ($this->request->getMethod() === 'POST') {
+            if ($this->request->hasArgument('text')) {
+                $text = $this->request->getArgument('text');
+            }
+        }
+
+        if (empty($text)) {
+            $text = GeneralUtility::_GP('text');
+        }
+
+        if (empty($text)) {
+            $contentObject = $this->configurationManager->getContentObject()->data;
+            $text = $contentObject['bodytext'] ?? '';
+        }
+
+        if (empty($text)) {
+            $this->logger->warning('TextFlow Plugin: No text content found for optimization');
+            $this->view->assign('error', 'Bitte geben Sie einen Text zur Optimierung ein.');
+            return $this->htmlResponse();
+        }
+
+        // Enable text flow
+        $conf = ['enable' => 1, 'preserveStructure' => 1];
+        $optimizedText = $this->textFlowService->hyphenate($text, $conf);
+
+        $this->view->assign('optimizedText', $optimizedText);
+        $this->view->assign('hyphenatedText', $optimizedText); // Assign to both variables for template compatibility
         $this->view->assign('originalText', $text);
-        $this->view->assign('processedText', $processedText);
-        $this->view->assign('language', $language);
-        $this->view->assign('settings', $settings);
-        
-        $availableLanguages = [
-            'de' => 'Deutsch',
-            'en' => 'English',
-            'fr' => 'Français',
-            'es' => 'Español',
-            'it' => 'Italiano',
-            'nl' => 'Nederlands',
-            'pt' => 'Português',
-            'zh' => '中文',
-            'ar' => 'العربية',
-            'hi' => 'हिन्दी'
-        ];
-        $this->view->assign('availableLanguages', $availableLanguages);
-        
-        $softHyphenCount = substr_count($processedText, "\u{00AD}");
-        $this->view->assign('softHyphenCount', $softHyphenCount);
-        
-        $wordCount = str_word_count($text);
-        $charCount = strlen($text);
-        
-        $this->view->assign('statistics', [
-            'wordCount' => $wordCount,
-            'charCount' => $charCount,
-            'softHyphenCount' => $softHyphenCount,
-            'softHyphenRatio' => $wordCount > 0 ? $softHyphenCount / $wordCount : 0
-        ]);
-        
+        $this->view->assign('text', $text);
+        $this->view->assign('settings', $this->settings);
+
         return $this->htmlResponse();
     }
 
@@ -107,15 +123,20 @@ class TextFlowController extends ActionController
 
         $contentObject = $this->configurationManager->getContentObject()->data;
         $text = $contentObject['bodytext'] ?? '';
-        
+
         if (empty($text)) {
             $this->logger->warning('TextFlow Plugin: No text content found');
+        } else {
+            // Enable text flow
+            $conf = ['enable' => 1, 'preserveStructure' => 1];
+            $hyphenatedText = $this->textFlowService->hyphenate($text, $conf);
+            $this->view->assign('hyphenatedText', $hyphenatedText);
         }
 
         $this->view->assign('text', $text);
         $this->view->assign('settings', $this->settings);
         $this->view->assign('contentObject', $contentObject);
-        
+
         return $this->htmlResponse();
     }
 
@@ -126,28 +147,17 @@ class TextFlowController extends ActionController
     {
         $contentObject = $this->configurationManager->getContentObject()->data;
         $text = $contentObject['bodytext'] ?? '';
-        
-        if (!empty($text)) {
-            $optimizedText = $this->textFlowService->hyphenate($text, $contentObject);
-            $this->view->assign('text', $optimizedText);
-        }
-        
-        return $this->htmlResponse();
-    }
 
-    /**
-     * Inject the TextFlowService
-     */
-    public function injectTextFlowService(TextFlowService $textFlowService): void
-    {
-        $this->textFlowService = $textFlowService;
-    }
-    
-    /**
-     * Inject the TextFlowPatternRepository
-     */
-    public function injectTextFlowPatternRepository(TextFlowPatternRepository $patternRepository): void
-    {
-        $this->patternRepository = $patternRepository;
+        if (!empty($text)) {
+            // Enable text flow
+            $conf = ['enable' => 1, 'preserveStructure' => 1];
+            $optimizedText = $this->textFlowService->hyphenate($text, $conf);
+            $this->view->assign('text', $optimizedText);
+            $this->view->assign('hyphenatedText', $optimizedText);
+        } else {
+            $this->logger->warning('TextFlow Plugin: No text content found for text flow action');
+        }
+
+        return $this->htmlResponse();
     }
 }

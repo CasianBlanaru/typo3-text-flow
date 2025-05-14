@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Text Flow',
-    'description' => 'Optimizes text flow with dynamic hyphenation',
+    'description' => 'Optimizes text flow with dynamic hyphenation for multiple languages (DE, EN, FR, ES, IT, NL)',
     'category' => 'fe',
     'author' => 'Casian Blanaru',
     'author_email' => 'casian@pixelcoda.com',

@@ -59,4 +59,4 @@ return [
         ['pattern' => 'dad'],
         ['pattern' => 'idad'],
     ],
-];
+]; 

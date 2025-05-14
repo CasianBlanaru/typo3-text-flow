@@ -1,5 +1,4 @@
 INSERT INTO tx_textflow_domain_model_textflowpattern (pid, language, pattern) VALUES
--- Deutsche Muster (de)
 (0, 'de', 'ung'),
 (0, 'de', 'ver'),
 (0, 'de', 'heit'),
@@ -7,59 +6,10 @@ INSERT INTO tx_textflow_domain_model_textflowpattern (pid, language, pattern) VA
 (0, 'de', 'lich'),
 (0, 'de', 'isch'),
 (0, 'de', 'bar'),
--- Englische Muster (en)
 (0, 'en', 'ing'),
 (0, 'en', 'tion'),
 (0, 'en', 'able'),
 (0, 'en', 'ment'),
 (0, 'en', 'ness'),
 (0, 'en', 'ship'),
-(0, 'en', 'less'),
--- Französische Muster (fr)
-(0, 'fr', 'tion'),
-(0, 'fr', 'ment'),
-(0, 'fr', 'able'),
-(0, 'fr', 'ique'),
-(0, 'fr', 'iste'),
-(0, 'fr', 'isme'),
-(0, 'fr', 'eur'),
--- Spanische Muster (es)
-(0, 'es', 'ción'),
-(0, 'es', 'dad'),
-(0, 'es', 'mente'),
-(0, 'es', 'idad'),
-(0, 'es', 'able'),
-(0, 'es', 'ismo'),
--- Italienische Muster (it)
-(0, 'it', 'zione'),
-(0, 'it', 'mento'),
-(0, 'it', 'ibile'),
-(0, 'it', 'abile'),
-(0, 'it', 'ista'),
-(0, 'it', 'ismo'),
--- Niederländische Muster (nl)
-(0, 'nl', 'heid'),
-(0, 'nl', 'ing'),
-(0, 'nl', 'lijk'),
-(0, 'nl', 'baar'),
-(0, 'nl', 'isch'),
--- Portugiesische Muster (pt)
-(0, 'pt', 'ção'),
-(0, 'pt', 'dade'),
-(0, 'pt', 'mento'),
-(0, 'pt', 'ável'),
-(0, 'pt', 'idade'),
--- Chinesische Muster (zh)
-(0, 'zh', '的'),
-(0, 'zh', '是'),
-(0, 'zh', '有'),
--- Arabische Muster (ar)
-(0, 'ar', 'ال'),
-(0, 'ar', 'ية'),
-(0, 'ar', 'ات'),
-(0, 'ar', 'ون'),
--- Hindi Muster (hi)
-(0, 'hi', 'ता'),
-(0, 'hi', 'ना'),
-(0, 'hi', 'िक'),
-(0, 'hi', 'ित'); 
+(0, 'en', 'less'); 
