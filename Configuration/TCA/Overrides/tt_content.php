@@ -9,12 +9,10 @@ $tempColumns = [
     'enable_textflow' => [
         'exclude' => true,
         'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow',
-        'description' => 'Aktiviert die TextFlow-Silbentrennung für dieses Content-Element',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.none', 'none'],
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.all', 'all'],
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.de', 'de'],
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.en', 'en'],
@@ -26,23 +24,33 @@ $tempColumns = [
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.zh', 'zh'],
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.ar', 'ar'],
                 ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.hi', 'hi'],
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang.xlf:enable_textflow.none', 'none'],
             ],
-            'default' => 'none',
+            'default' => 'all',
             'size' => 1,
             'maxitems' => 1,
         ],
     ],
-    // Legacy field, now replaced by enable_textflow select field
+    'tx_textflow_enable' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow',
+        'config' => [
+            'type' => 'check',
+            'default' => 0,
+            'items' => [
+                ['LLL:EXT:text_flow/Resources/Private/Language/locallang_db.xlf:tt_content.enable_textflow.enable', '']
+            ]
+        ]
+    ]
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
-
-// Add to all content elements with bodytext
+ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'enable_textflow', '', 'after:bodytext');
 ExtensionManagementUtility::addToAllTCAtypes(
     'tt_content',
-    'enable_textflow',
-    'text,textpic,textmedia,bullets,table,header,menu,list,mask_*',
-    'after:bodytext'
+    'tx_textflow_enable',
+    'text,textmedia,textpic,table,bullets,header',
+    'after:header'
 );
 
 // Configure Plugin
@@ -96,6 +104,7 @@ $GLOBALS['TCA']['tt_content']['types']['textflow'] = [
             --palette--;;headers,
             bodytext;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text,
             enable_textflow,
+            tx_textflow_enable,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
             --palette--;;access,

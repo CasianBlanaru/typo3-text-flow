@@ -11,7 +11,7 @@ PixelCoda TextFlow
 :Language: en
 :Author: Casian Blanaru
 :Company: PixelCoda
-:Email: casianus
+:Email: casian@pixelcoda.com
 :License: GPL-2.0-or-later
 :Rendered: |today|
 
@@ -54,15 +54,13 @@ for multiple languages while preserving HTML structure and text formatting.
 Key Features
 ~~~~~~~~~~~
 
-* Multi-language support (de, en, fr, es, it, nl)
+* Multi-language support (de, en, fr, es)
 * Smart hyphenation based on language patterns
 * HTML and special character preservation
 * Case-sensitive text processing
 * Performance-optimized caching
 * Backend pattern management
 * Live preview functionality
-* Debug mode with visual hyphenation markers
-* Selective activation per content element
 
 Quick Start Guide
 ---------------
@@ -114,13 +112,11 @@ b) Find TextFlow settings in the "Appearance" tab
 c) Choose hyphenation options:
 
 * all: Enable for all languages
-* none: Disable hyphenation (default)
+* none: Disable hyphenation
 * de: German only
 * en: English only
 * fr: French only
 * es: Spanish only
-
-Note: By default, hyphenation is disabled for all content elements. You need to explicitly enable it for each element.
 
 2. Fluid Templates
 ~~~~~~~~~~~~~~~
@@ -128,7 +124,7 @@ Note: By default, hyphenation is disabled for all content elements. You need to 
 Basic usage::
 
     {namespace tf=PixelCoda\TextFlow\ViewHelpers}
-
+    
     <tf:process>{text}</tf:process>
 
 With options::
@@ -148,7 +144,7 @@ Basic usage::
 
     use PixelCoda\TextFlow\Service\TextFlowService;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
-
+    
     $textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
     $hyphenatedText = $textFlowService->hyphenate($text);
 
@@ -164,48 +160,7 @@ With additional options::
     ];
     $hyphenatedText = $textFlowService->hyphenate($text, $options);
 
-With debug mode::
-
-    $options = [
-        'enable_textflow' => 'de',
-        'debug' => true
-    ];
-    $hyphenatedText = $textFlowService->hyphenate($text, $options);
-
-4. Debugging
-~~~~~~~~~~
-
-TextFlow offers multiple debugging options to visualize hyphenation points:
-
-a) URL Parameter Debugging:
-
-   Add one of these parameters to your page URL to activate debug mode:
-
-   * ?debug_textflow=1 - Basic text markers ("-||-")
-   * ?debug_textflow=3 - Very obvious markers ("▼TRENN▼")
-
-b) Programmatic Debugging:
-
-   * Direct Service Configuration::
-
-        $textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
-        TextFlowService::setDebugLevel(1); // 1 or 3
-        $hyphenatedText = $textFlowService->hyphenate($text, $options);
-
-   * Via configuration array::
-
-        $options = [
-            'enable_textflow' => 'de',
-            'debug' => true
-        ];
-        $hyphenatedText = $textFlowService->hyphenate($text, $options);
-
-c) Debug Levels:
-
-   * Level 1: Basic text markers ("-||-")
-   * Level 3: Very obvious markers ("▼TRENN▼")
-
-5. Backend Module
+4. Backend Module
 ~~~~~~~~~~~~~~
 
 The TextFlow backend module provides:
@@ -216,7 +171,7 @@ The TextFlow backend module provides:
 * Pattern import/export
 * Cache management
 
-6. Pattern Management
+5. Pattern Management
 ~~~~~~~~~~~~~~~~~
 
 Via backend module:
@@ -231,12 +186,12 @@ Programmatically::
 
     use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
-
+    
     $patternRepository = GeneralUtility::makeInstance(TextFlowPatternRepository::class);
-
+    
     // Add single pattern
     $patternRepository->addPattern('beispiel', 'de');
-
+    
     // Add multiple patterns
     $patterns = [
         'de' => ['bei', 'spiel'],
@@ -270,7 +225,7 @@ Cache Management
 
     use TYPO3\CMS\Core\Cache\CacheManager;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
-
+    
     $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
     $cacheManager->flushCachesByTag('text_flow');
 
@@ -282,11 +237,10 @@ Common Issues
 
 1. No hyphenation visible:
 
-   * Check TextFlow activation in content element (must be explicitly enabled)
+   * Check TextFlow activation in content element
    * Verify language configuration
    * Clear caches
    * Check minimum word length (5 characters)
-   * Ensure debug_textflow parameter is not set to 0
 
 2. Wrong hyphenation:
 
@@ -294,11 +248,11 @@ Common Issues
    * Verify pattern repository
    * Rebuild cache
 
-3. Debug mode not working:
+3. Performance issues:
 
-   * Try different debug levels (?debug_textflow=3 for most visible markers)
-   * Clear browser and TYPO3 caches
-   * Check if the content element has TextFlow enabled
+   * Enable pattern cache
+   * Optimize pattern count
+   * Adjust logging level
 
 Logging
 ~~~~~~
@@ -308,7 +262,7 @@ The extension logs to TYPO3's system log::
     // In custom extensions
     $logger->warning('TextFlow Service: Empty text content');
     $logger->error('TextFlow Service: Invalid pattern format');
-
+    
     // Check log files
     var/log/typo3_*.log
 

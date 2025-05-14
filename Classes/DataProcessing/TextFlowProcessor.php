@@ -26,20 +26,14 @@ class TextFlowProcessor implements DataProcessorInterface
         array $processedData
     ): array {
         $textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
-
+        
         // Get the content from the tt_content record
         $content = $cObj->data['bodytext'] ?? '';
-
+        
         // Get configuration from content element
         $options = [
             'enable_textflow' => $cObj->data['enable_textflow'] ?? null
         ];
-
-        // Debug-Modus über URL-Parameter aktivieren
-        $debugParam = GeneralUtility::_GP('debug_textflow');
-        if ($debugParam) {
-            $options['debug'] = (bool)$debugParam;
-        }
 
         // Process the content
         $hyphenatedText = $textFlowService->hyphenate($content, $options);
@@ -50,4 +44,4 @@ class TextFlowProcessor implements DataProcessorInterface
 
         return $processedData;
     }
-}
+} 

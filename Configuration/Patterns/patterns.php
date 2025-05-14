@@ -59,4 +59,66 @@ return [
         ['pattern' => 'dad'],
         ['pattern' => 'idad'],
     ],
-]; 
+    'it' => [
+        // Italienische Trennungsmuster
+        ['pattern' => 'ch'],
+        ['pattern' => 'gh'],
+        ['pattern' => 'gl'],
+        ['pattern' => 'gn'],
+        ['pattern' => 'sc'],
+        ['pattern' => 'zione'],
+        ['pattern' => 'pre'],
+        ['pattern' => 'in'],
+        ['pattern' => 'con'],
+        ['pattern' => 'mente'],
+    ],
+    'nl' => [
+        // Niederländische Trennungsmuster
+        ['pattern' => 'sch'],
+        ['pattern' => 'ch'],
+        ['pattern' => 'ij'],
+        ['pattern' => 'ing'],
+        ['pattern' => 'ver'],
+        ['pattern' => 'ont'],
+        ['pattern' => 'be'],
+        ['pattern' => 'ge'],
+        ['pattern' => 'heid'],
+        ['pattern' => 'lijk'],
+    ],
+    'pt' => [
+        // Portugiesische Trennungsmuster
+        ['pattern' => 'ch'],
+        ['pattern' => 'lh'],
+        ['pattern' => 'nh'],
+        ['pattern' => 'ção'],
+        ['pattern' => 'pre'],
+        ['pattern' => 'des'],
+        ['pattern' => 'mente'],
+        ['pattern' => 'dade'],
+        ['pattern' => 'idade'],
+    ],
+    'zh' => [
+        // Chinesische Trennungsmuster (einfache Beispiele)
+        ['pattern' => '的'],
+        ['pattern' => '是'],
+        ['pattern' => '在'],
+        ['pattern' => '有'],
+        ['pattern' => '和'],
+    ],
+    'ar' => [
+        // Arabische Trennungsmuster (einfache Beispiele)
+        ['pattern' => 'ال'],
+        ['pattern' => 'في'],
+        ['pattern' => 'من'],
+        ['pattern' => 'على'],
+        ['pattern' => 'إلى'],
+    ],
+    'hi' => [
+        // Hindi Trennungsmuster (einfache Beispiele)
+        ['pattern' => 'का'],
+        ['pattern' => 'की'],
+        ['pattern' => 'के'],
+        ['pattern' => 'में'],
+        ['pattern' => 'है'],
+    ],
+];
