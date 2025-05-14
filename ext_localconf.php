@@ -15,5 +15,15 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdW
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['textFlowPatterns'] = \PixelCoda\TextFlow\Install\PatternInstaller::class;
 
 // Registriere einen Hook für die automatische Installation fehlender Muster
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['text_flow'] = 
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['text_flow'] =
     \PixelCoda\TextFlow\Hooks\PatternInstallerHook::class;
+
+// Direkter Content Element Rendering Hook
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['cObjTypeAndClass']['text'] = [
+    'text',
+    \PixelCoda\TextFlow\Hooks\ContentRenderingHook::class
+];
+
+// TYPO3 parseFunc Hook für RTE-Content
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_parsehtml.php']['postTransformTagsHook']['text_flow'] =
+    \PixelCoda\TextFlow\Hooks\TextContentHook::class . '->processContent';

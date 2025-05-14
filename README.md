@@ -1,129 +1,108 @@
-# TextFlow Extension for TYPO3
+# TYPO3 Text Flow Extension
 
-A powerful text optimization extension for TYPO3 that provides intelligent hyphenation and text flow enhancement.
+Optimizes text flow with dynamic hyphenation for multiple languages.
 
 ## Features
 
-- Multi-language support for text hyphenation
-- Smart pattern-based hyphenation algorithm
-- HTML content preservation
+- Multi-language support (DE, EN, FR, ES, IT, NL, PT, ZH, AR, HI)
+- Smart hyphenation based on language patterns
+- HTML and special character preservation
 - Case-sensitive text processing
-- Performance optimization through caching
-- Backend module for text optimization
-- Frontend plugin for automatic text processing
-- Configurable content element
+- Performance-optimized caching
+- Backend pattern management
+- Debug mode with visual hyphenation markers
+- Selective activation per content element
 
 ## Installation
 
-Install via composer:
+### Via Composer
 
 ```bash
 composer require pixelcoda/text-flow
 ```
 
-## Configuration
+After installation, make sure to:
+1. Activate the extension in the Extension Manager
+2. Clear all caches
+3. Run the import command for additional languages:
 
-### Basic Setup
-
-1. Install the extension through the Extension Manager
-2. Include the static TypoScript template
-3. Configure language settings in your site configuration
-
-### Content Element Settings
-
-Configure the TextFlow content element in your page properties:
-
-```typoscript
-tt_content.text_flow {
-    settings {
-        enableTextFlow = 1
-        defaultLanguage = en
-    }
-}
+```bash
+vendor/bin/typo3 textflow:import-patterns
 ```
 
 ## Usage
 
-### In Fluid Templates
+### In Backend
 
-Use the ViewHelper to process text:
+1. Edit any content element
+2. Go to the "Appearance" tab
+3. Find "Text Flow Language" dropdown
+4. Select your preferred language:
+   - Disabled [none] (default)
+   - All languages [all]
+   - German [de]
+   - English [en]
+   - French [fr]
+   - Spanish [es]
+   - Italian [it]
+   - Dutch [nl]
+   - Portuguese [pt]
+   - Chinese [zh]
+   - Arabic [ar]
+   - Hindi [hi]
+
+### In Templates
 
 ```html
-{namespace tf=PixelCoda\TextFlow\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 
-<tf:process text="{text}" />
+<!-- WICHTIG: Beachten Sie die korrekte Kleinschreibung des ViewHelpers -->
+
+<!-- Basic usage (using the textflow ViewHelper) -->
+<tf:textflow>{text}</tf:textflow>
+
+<!-- With text parameter -->
+<tf:textflow text="{text}" />
+
+<!-- With language parameter -->
+<tf:textflow text="{text}" language="de" />
+
+<!-- With content element data -->
+<tf:textflow data="{data}">{text}</tf:textflow>
+
+<!-- Legacy ViewHelpers (weiterhin unterstützt) -->
+<tf:process>{text}</tf:process>
+<tf:optimize>{text}</tf:optimize>
+</html>
 ```
 
-### In PHP
+### Debug Mode
 
-```php
-use PixelCoda\TextFlow\Service\TextFlowService;
+Add one of these URL parameters:
 
-$textFlowService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TextFlowService::class);
-$processedText = $textFlowService->hyphenate($text);
-```
+- `?debug_textflow=1` - Basic text markers ("-||-")
+- `?debug_textflow=3` - Prominent markers ("▼TRENN▼")
 
-### Content Element
+**Important:** The debug mode now only shows hyphenation markers for elements where TextFlow is actually enabled.
 
-1. Create a new content element
-2. Select "TextFlow" from the content type list
-3. Enter your text
-4. Configure language and hyphenation settings
+## Supported Languages
 
-## Pattern Management
+- German (de)
+- English (en)
+- French (fr)
+- Spanish (es)
+- Italian (it)
+- Dutch (nl)
+- Portuguese (pt)
+- Chinese (zh)
+- Arabic (ar)
+- Hindi (hi)
 
-### Adding Custom Patterns
+## License
 
-Create a pattern file in `Configuration/Patterns/`:
-
-```php
-return [
-    'pattern' => 'your-pattern',
-    'language' => 'en',
-    'priority' => 1
-];
-```
-
-### Pattern Format Rules
-
-- Use hyphens (-) to indicate possible break points
-- Patterns must be at least 2 characters long
-- Priority determines pattern application order
-
-## Development
-
-### Running Tests
-
-```bash
-composer test
-```
-
-### Code Style
-
-```bash
-composer cs-fix
-```
-
-## Troubleshooting
-
-### Common Issues
-
-1. No hyphenation visible:
-   - Check if TextFlow is enabled in TypoScript
-   - Verify language settings
-   - Clear TYPO3 cache
-
-2. Pattern not working:
-   - Check pattern format
-   - Verify language assignment
-   - Clear pattern cache
-
-### Logging
-
-TextFlow logs important operations to TYPO3's system log. Check the log for:
-- Pattern loading issues
-- Language configuration problems
-- Processing errors
+GPL-2.0-or-later. See LICENSE file for details.
 
 ## Contributing
 
@@ -132,10 +111,6 @@ TextFlow logs important operations to TYPO3's system log. Check the log for:
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-
-## License
-
-GPL-2.0-or-later. See LICENSE file for details.
 
 ## Support
 

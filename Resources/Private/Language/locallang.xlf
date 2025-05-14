@@ -15,9 +15,33 @@
             <trans-unit id="enable_textflow.en">
                 <source>English</source>
             </trans-unit>
+            <trans-unit id="enable_textflow.fr">
+                <source>French</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.es">
+                <source>Spanish</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.it">
+                <source>Italian</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.nl">
+                <source>Dutch</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.pt">
+                <source>Portuguese</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.zh">
+                <source>Chinese</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.ar">
+                <source>Arabic</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.hi">
+                <source>Hindi</source>
+            </trans-unit>
             <trans-unit id="enable_textflow.none">
                 <source>Disabled</source>
             </trans-unit>
         </body>
     </file>
-</xliff> 
+</xliff>

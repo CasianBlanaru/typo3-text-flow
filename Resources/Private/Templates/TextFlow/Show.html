@@ -1,35 +1,46 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:tf="http://typo3.org/ns/Pixelcoda/TextFlow/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <f:layout name="Default" />
 
 <f:section name="HeaderAssets">
-    <link rel="stylesheet" href="{f:uri.resource(path:'Css/text_flow.css')}" />
+    <f:if condition="{settings.includeCSS}">
+        <link rel="stylesheet" href="{f:uri.resource(path:'Css/text_flow.css')}" />
+    </f:if>
 </f:section>
 
 <f:section name="Main">
     <div class="text-flow-content">
-        <f:if condition="{text}">
+        <f:if condition="{hyphenatedText}">
             <f:then>
                 <div class="text-flow-output">
-                    <f:format.raw>{text}</f:format.raw>
+                    <f:format.html>{hyphenatedText}</f:format.html>
                 </div>
             </f:then>
             <f:else>
-                <div class="text-flow-form">
-                    <f:form action="optimize" controller="TextFlow" method="post">
-                        <div class="form-group">
-                            <label for="text">Text zum Optimieren:</label>
-                            <f:form.textarea class="form-control" id="text" name="text" rows="10" />
+                <f:if condition="{text}">
+                    <f:then>
+                        <div class="text-flow-output">
+                            <f:format.html>{text}</f:format.html>
                         </div>
-                        <div class="form-group">
-                            <f:form.submit value="Text optimieren" class="btn btn-primary" />
+                    </f:then>
+                    <f:else>
+                        <div class="text-flow-form">
+                            <f:form action="optimize" controller="TextFlow" method="post">
+                                <div class="form-group">
+                                    <label for="text">Text zum Optimieren:</label>
+                                    <f:form.textarea class="form-control" id="text" name="text" rows="10" />
+                                </div>
+                                <div class="form-group">
+                                    <f:form.submit value="Text optimieren" class="btn btn-primary" />
+                                </div>
+                            </f:form>
                         </div>
-                    </f:form>
-                </div>
+                    </f:else>
+                </f:if>
             </f:else>
         </f:if>
     </div>
 </f:section>
-</html> 
+</html>

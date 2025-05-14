@@ -13,4 +13,10 @@ services:
     tags: ['backend.controller']
 
   PixelCoda\TextFlow\Service\TextFlowService:
-    public: true 
+    public: true
+
+  PixelCoda\TextFlow\Command\ImportPatternsCommand:
+    tags:
+      - name: 'console.command'
+        command: 'textflow:import-patterns'
+        description: 'Imports additional language patterns for TextFlow'
