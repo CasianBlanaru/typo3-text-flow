@@ -1,3 +1,16 @@
+# Version 1.0.1
+
+## Bugfixes
+
+- Fixed hyphenation for German and English words
+- Improved HTML content handling
+- Performance optimization for TextFlow service
+
+## Changes
+
+- Enhanced unit tests for TextFlowService
+- Code quality improvements
+
 # Version 1.1.0
 
 ## New Features
