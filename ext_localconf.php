@@ -65,5 +65,5 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 
     // Register hooks for content processing
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap']['tx_textflow'] = 
-        \PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class . '->processStdWrap';
+        \PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class;
 })();
