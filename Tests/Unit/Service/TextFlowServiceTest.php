@@ -12,6 +12,8 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Log\Logger;
 use TYPO3\CMS\Core\Log\LogManager;
+use TYPO3\CMS\Core\Cache\CacheManager;
+use TYPO3\CMS\Core\Cache\Frontend\VariableFrontend;
 
 /**
  * Unit tests for TextFlowService.
@@ -53,6 +55,15 @@ class TextFlowServiceTest extends UnitTestCase
         
         $logManager = $this->createMock(LogManager::class);
         $logManager->method('getLogger')->willReturn($this->logger);
+
+        $cacheMock = $this->createMock(VariableFrontend::class);
+        $cacheMock->method('get')->willReturn(false);
+        $cacheMock->method('set')->willReturn(null);
+
+        $cacheManagerMock = $this->createMock(CacheManager::class);
+        $cacheManagerMock->method('getCache')->willReturn($cacheMock);
+
+        $this->inject($this->textFlowService, 'cacheInstance', $cacheMock);
     }
 
     /**
@@ -334,5 +345,89 @@ class TextFlowServiceTest extends UnitTestCase
 
         $result = $this->textFlowService->buildPatterns($patterns);
         self::assertEmpty($result);
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenateReturnsUnchangedContentIfEmpty(): void
+    {
+        self::assertEquals('', $this->textFlowService->hyphenate('', []));
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenateReturnsUnchangedContentIfHyphenationDisabled(): void
+    {
+        self::assertEquals('test', $this->textFlowService->hyphenate('test', ['enable' => false]));
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenateProcessesContentWithPatterns(): void
+    {
+        // Setup test patterns
+        $this->patternRepository->method('findByLanguage')
+            ->with('de')
+            ->willReturn([
+                ['pattern' => 'tren'],
+                ['pattern' => 'nung']
+            ]);
+
+        $result = $this->textFlowService->hyphenate('Silbentrennung', ['enable' => true]);
+        self::assertStringContainsString('&shy;', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenateReturnsContentUnchangedForShortWords(): void
+    {
+        $this->patternRepository->method('findByLanguage')
+            ->with('de')
+            ->willReturn([
+                ['pattern' => 'st']
+            ]);
+
+        $result = $this->textFlowService->hyphenate('Test', ['enable' => true]);
+        self::assertEquals('Test', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenatePreservesHtmlStructure(): void
+    {
+        $this->patternRepository->method('findByLanguage')
+            ->with('de')
+            ->willReturn([
+                ['pattern' => 'nung']
+            ]);
+
+        $html = '<div>Silbentrennung <strong>funktioniert</strong> gut.</div>';
+        $result = $this->textFlowService->hyphenate($html, ['enable' => true, 'preserveStructure' => true]);
+        
+        self::assertStringContainsString('<div>', $result);
+        self::assertStringContainsString('<strong>', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function hyphenateProcessesMultipleLanguages(): void
+    {
+        $this->patternRepository->method('findByLanguage')
+            ->willReturnMap([
+                ['de', [['pattern' => 'nung']]],
+                ['en', [['pattern' => 'tion']]]
+            ]);
+
+        $deResult = $this->textFlowService->hyphenate('Trennung', ['enable' => true, 'enable_textflow' => 'de']);
+        $enResult = $this->textFlowService->hyphenate('Hyphenation', ['enable' => true, 'enable_textflow' => 'en']);
+        
+        self::assertStringContainsString('&shy;', $deResult);
+        self::assertStringContainsString('&shy;', $enResult);
     }
 }

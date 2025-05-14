@@ -1,3 +1,8 @@
+/**
+ * TextFlow CSS Styles
+ * Modern styling for hyphenated text with responsive design support
+ */
+
 /* TextFlow - Minimal styles for hyphenation */
 .tx-text-flow {
     /* Enable hyphenation */
@@ -26,4 +31,190 @@
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
+}
+
+/* Basic styling for TextFlow content */
+.textflow-content {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    text-align: justify;
+    line-height: 1.6;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+    word-spacing: 0.05em;
+}
+
+/* Responsive text sizing */
+@media (max-width: 767px) {
+    .textflow-content {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .textflow-content {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+}
+
+@media (min-width: 1200px) {
+    .textflow-content {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}
+
+/* Text optimizer specific styles */
+.textflow-optimizer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.textflow-optimizer .textflow-form {
+    margin-bottom: 30px;
+}
+
+.textflow-optimizer textarea {
+    min-height: 200px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.textflow-optimizer .textflow-result {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+.textflow-optimizer .textflow-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.textflow-optimizer .textflow-stat-item {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.textflow-optimizer .textflow-stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    color: #0078d7;
+}
+
+.textflow-optimizer .textflow-stat-label {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Preview styling */
+.textflow-preview {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    position: relative;
+}
+
+.textflow-preview:before {
+    content: "Preview";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: white;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Languages with specific text direction */
+[lang="ar"] .textflow-content {
+    direction: rtl;
+}
+
+[lang="hi"] .textflow-content {
+    line-height: 1.8; /* Better for Devanagari script */
+}
+
+/* Backend module specific styles */
+.textflow-module {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.textflow-module .textflow-panel {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.textflow-module .textflow-panel-header {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textflow-module .textflow-panel-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.textflow-module .textflow-panel-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Debug mode */
+.textflow-debug .soft-hyphen {
+    background-color: rgba(255, 235, 59, 0.5);
+    outline: 1px dotted #ffab00;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .textflow-optimizer .textflow-result,
+    .textflow-preview {
+        background-color: #333;
+        color: #f0f0f0;
+        border-color: #444;
+    }
+    
+    .textflow-optimizer .textflow-stat-item {
+        background-color: #444;
+    }
+    
+    .textflow-optimizer .textflow-stat-value {
+        color: #4dacff;
+    }
+    
+    .textflow-optimizer .textflow-stat-label {
+        color: #ccc;
+    }
 }
