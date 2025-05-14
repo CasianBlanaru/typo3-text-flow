@@ -8,10 +8,10 @@ if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow']
 }
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'][] = 'PixelCoda\\TextFlow\\ViewHelpers';
 
-// Registriere den Pattern-Installer für die Extension-Installation
+// Register pattern installer for extension installation
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['textFlowPatterns'] = \PixelCoda\TextFlow\Install\PatternInstaller::class;
 
-// Registriere einen Hook für die automatische Installation fehlender Muster
+// Register hook for automatic installation of missing patterns
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['text_flow'] = 
     \PixelCoda\TextFlow\Hooks\PatternInstallerHook::class;
 
