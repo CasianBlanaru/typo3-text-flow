@@ -9,27 +9,10 @@
 </f:section>
 
 <f:section name="Main">
-    <div class="text-flow-content">
-        <f:if condition="{text}">
-            <f:then>
-                <div class="text-flow-output">
-                    <f:format.raw>{text}</f:format.raw>
-                </div>
-            </f:then>
-            <f:else>
-                <div class="text-flow-form">
-                    <f:form action="optimize" controller="TextFlow" method="post">
-                        <div class="form-group">
-                            <label for="text">Text zum Optimieren:</label>
-                            <f:form.textarea class="form-control" id="text" name="text" rows="10" />
-                        </div>
-                        <div class="form-group">
-                            <f:form.submit value="Text optimieren" class="btn btn-primary" />
-                        </div>
-                    </f:form>
-                </div>
-            </f:else>
-        </f:if>
+    <div class="textflow-content-display">
+        <div class="textflow-content">
+            <f:format.raw>{processedText}</f:format.raw>
+        </div>
     </div>
 </f:section>
 </html> 

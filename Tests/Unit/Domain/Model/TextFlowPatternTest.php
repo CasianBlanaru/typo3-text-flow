@@ -6,12 +6,18 @@ use PixelCoda\TextFlow\Domain\Model\TextFlowPattern;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
- * Unit tests for TextFlowPattern.
+ * Test case for the TextFlowPattern model
  */
 class TextFlowPatternTest extends UnitTestCase
 {
-    protected TextFlowPattern $subject;
+    /**
+     * @var TextFlowPattern
+     */
+    protected $subject;
 
+    /**
+     * Set up
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -21,34 +27,36 @@ class TextFlowPatternTest extends UnitTestCase
     /**
      * @test
      */
-    public function getLanguageReturnsInitialValue(): void
+    public function getLanguageReturnsInitialValueForString(): void
     {
-        $this->assertSame('', $this->subject->getLanguage());
+        self::assertSame('', $this->subject->getLanguage());
     }
 
     /**
      * @test
      */
-    public function setLanguageSetsValue(): void
+    public function setLanguageSetsLanguage(): void
     {
-        $this->subject->setLanguage('de');
-        $this->assertSame('de', $this->subject->getLanguage());
+        $language = 'de';
+        $this->subject->setLanguage($language);
+        self::assertEquals($language, $this->subject->getLanguage());
     }
 
     /**
      * @test
      */
-    public function getPatternReturnsInitialValue(): void
+    public function getPatternReturnsInitialValueForString(): void
     {
-        $this->assertSame('', $this->subject->getPattern());
+        self::assertSame('', $this->subject->getPattern());
     }
 
     /**
      * @test
      */
-    public function setPatternSetsValue(): void
+    public function setPatternSetsPattern(): void
     {
-        $this->subject->setPattern('kon');
-        $this->assertSame('kon', $this->subject->getPattern());
+        $pattern = 'ung';
+        $this->subject->setPattern($pattern);
+        self::assertEquals($pattern, $this->subject->getPattern());
     }
 }

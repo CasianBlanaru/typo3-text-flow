@@ -9,43 +9,69 @@
 </f:section>
 
 <f:section name="Main">
-    <div class="text-flow-optimizer">
-        <f:form action="optimize" method="post" class="text-flow-form" name="textOptimizer">
-            <div class="form-group">
-                <label for="text">Text zum Optimieren:</label>
-                <f:form.textarea property="text" id="text" class="form-control" value="{originalText}" rows="5" required="required" />
-                <small class="text-muted form-text">Bitte geben Sie hier den zu optimierenden Text ein.</small>
-            </div>
-            <div class="form-group">
-                <f:form.submit value="Text optimieren" class="btn btn-primary" />
-            </div>
-        </f:form>
-
-        <f:if condition="{error}">
-            <f:then>
-                <div class="alert alert-warning">
-                    {error}
+    <div class="textflow-optimizer">
+        <div class="textflow-form">
+            <f:form action="optimize" method="post">
+                <div class="form-group">
+                    <label for="text">Text zur Optimierung</label>
+                    <f:form.textarea id="text" name="text" value="{originalText}" class="form-control" rows="10" />
                 </div>
-            </f:then>
-            <f:else>
-                <f:if condition="{optimizedText}">
-                    <div class="text-flow-result">
-                        <div class="text-flow-original">
-                            <h3>Original Text</h3>
-                            <div class="content">
-                                {originalText -> f:format.raw()}
-                            </div>
-                        </div>
-                        
-                        <div class="text-flow-optimized">
-                            <h3>Optimierter Text</h3>
-                            <div class="content">
-                                {optimizedText -> f:format.raw()}
-                            </div>
+                
+                <div class="form-group">
+                    <label for="language">Sprache</label>
+                    <f:form.select id="language" name="language" value="{language}" options="{availableLanguages}" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <f:form.submit value="Text optimieren" class="btn btn-primary" />
+                </div>
+            </f:form>
+        </div>
+        
+        <f:if condition="{processedText}">
+            <div class="textflow-result">
+                <h3>Optimierter Text</h3>
+                <div class="textflow-content" lang="{language}">
+                    <f:format.raw>{processedText}</f:format.raw>
+                </div>
+                
+                <div class="textflow-stats">
+                    <div class="textflow-stat-item">
+                        <span class="textflow-stat-value">{statistics.wordCount}</span>
+                        <span class="textflow-stat-label">Wörter</span>
+                    </div>
+                    
+                    <div class="textflow-stat-item">
+                        <span class="textflow-stat-value">{statistics.charCount}</span>
+                        <span class="textflow-stat-label">Zeichen</span>
+                    </div>
+                    
+                    <div class="textflow-stat-item">
+                        <span class="textflow-stat-value">{statistics.softHyphenCount}</span>
+                        <span class="textflow-stat-label">Trennstellen</span>
+                    </div>
+                    
+                    <div class="textflow-stat-item">
+                        <span class="textflow-stat-value"><f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">{statistics.softHyphenRatio}</f:format.number></span>
+                        <span class="textflow-stat-label">Trennstellen pro Wort</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Debug-Modus nur anzeigen, wenn in den Einstellungen aktiviert -->
+            <f:if condition="{settings.showDebugInformation}">
+                <div class="textflow-debug-panel">
+                    <h4>Debug-Informationen</h4>
+                    <div class="textflow-debug-content">
+                        <p>
+                            <strong>Text mit sichtbaren Trennstellen:</strong>
+                        </p>
+                        <div class="textflow-debug">
+                            <f:format.raw>{processedText -> f:format.htmlentitiesDecode() -> f:format.htmlspecialchars()}</f:format.raw>
                         </div>
                     </div>
-                </f:if>
-            </f:else>
+                </div>
+            </f:if>
         </f:if>
     </div>
 </f:section>
