@@ -58,8 +58,6 @@ vendor/bin/typo3 textflow:import-patterns
       xmlns:tf="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<!-- WICHTIG: Beachten Sie die korrekte Kleinschreibung des ViewHelpers -->
-
 <!-- Basic usage (using the textflow ViewHelper) -->
 <tf:textflow>{text}</tf:textflow>
 
@@ -72,7 +70,7 @@ vendor/bin/typo3 textflow:import-patterns
 <!-- With content element data -->
 <tf:textflow data="{data}">{text}</tf:textflow>
 
-<!-- Legacy ViewHelpers (weiterhin unterstützt) -->
+<!-- Legacy ViewHelpers (still supported) -->
 <tf:process>{text}</tf:process>
 <tf:optimize>{text}</tf:optimize>
 </html>
