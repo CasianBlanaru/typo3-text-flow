@@ -60,7 +60,7 @@ class TextFlowController extends ActionController
         $conf = [
             'enable' => 1,
             'preserveStructure' => 1,
-            'debug' => true // Immer Debug-Modus für Tests aktivieren
+            'debug' => true // Always enable debug mode for tests
         ];
 
         $hyphenatedText = $this->textFlowService->hyphenate($text, $conf);

@@ -127,7 +127,7 @@ class TextFlowService implements SingletonInterface
         $textflowEnabled = true;
         if (isset($conf['enable_textflow']) && ($conf['enable_textflow'] === 'none' || empty($conf['enable_textflow']))) {
             $textflowEnabled = false;
-            // WICHTIG: Bei deaktiviertem TextFlow einfach Original-Inhalt zurückgeben
+            // IMPORTANT: Return original content when TextFlow is disabled
             return $content;
         }
 

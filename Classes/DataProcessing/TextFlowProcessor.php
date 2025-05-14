@@ -35,7 +35,7 @@ class TextFlowProcessor implements DataProcessorInterface
             'enable_textflow' => $cObj->data['enable_textflow'] ?? null
         ];
 
-        // Debug-Modus über URL-Parameter aktivieren
+        // Enable debug mode via URL parameter
         $debugParam = GeneralUtility::_GP('debug_textflow');
         if ($debugParam) {
             $options['debug'] = (bool)$debugParam;

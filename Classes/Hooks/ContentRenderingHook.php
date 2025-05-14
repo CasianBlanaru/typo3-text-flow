@@ -35,7 +35,7 @@ class ContentRenderingHook extends AbstractContentObject
                 'preserveStructure' => 1
             ];
 
-            // Debug-Modus über URL-Parameter aktivieren
+            // Enable debug mode via URL parameter
             $debugParam = GeneralUtility::_GP('debug_textflow');
             if ($debugParam) {
                 $processConf['debug'] = (bool)$debugParam;
@@ -87,7 +87,7 @@ class ContentRenderingHook extends AbstractContentObject
             'preserveStructure' => 1
         ];
 
-        // Debug-Modus über URL-Parameter aktivieren
+        // Enable debug mode via URL parameter
         $debugParam = GeneralUtility::_GP('debug_textflow');
         if ($debugParam) {
             $processConf['debug'] = (bool)$debugParam;

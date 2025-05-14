@@ -25,24 +25,24 @@ class TextContentHook
             return;
         }
 
-        // Überprüfe, ob TextFlow für dieses Content-Element aktiviert ist
+        // Check if TextFlow is enabled for this content element
         if (empty($params['pObj']->data['enable_textflow']) || $params['pObj']->data['enable_textflow'] === 'none') {
             return;
         }
 
-        // Clean empty paragraphs and HTML-Kommentare
+        // Clean empty paragraphs and HTML comments
         $content = $params['pObj']->content;
 
-        // Entferne leere Paragraphen
+        // Remove empty paragraphs
         $content = preg_replace('/<p>\s*(&nbsp;|\s)*\s*<\/p>/', '', $content);
 
-        // Entferne HTML-Kommentare
+        // Remove HTML comments
         $content = preg_replace('/<!--(.|\s)*?-->/', '', $content);
 
-        // Entferne mehrere aufeinanderfolgende Leerzeilen
+        // Remove multiple consecutive empty lines
         $content = preg_replace('/\n\s*\n/', "\n", $content);
 
-        // Erneut prüfen, ob der Inhalt nach der Reinigung noch vorhanden ist
+        // Check if content is still available after cleaning
         if (empty(trim($content))) {
             return;
         }
@@ -54,7 +54,7 @@ class TextContentHook
             'preserveStructure' => 1
         ];
 
-        // Debug-Modus über URL-Parameter aktivieren
+        // Enable debug mode via URL parameter
         $debugParam = GeneralUtility::_GP('debug_textflow');
         if ($debugParam) {
             $processConf['debug'] = (bool)$debugParam;
