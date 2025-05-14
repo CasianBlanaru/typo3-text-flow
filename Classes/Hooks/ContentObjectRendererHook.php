@@ -12,7 +12,7 @@ class ContentObjectRendererHook
     /**
      * Hook for stdWrap processing
      */
-    public function stdWrap_postProcess(
+    public function processStdWrap(
         string $content,
         array $configuration,
         ContentObjectRenderer $contentObject

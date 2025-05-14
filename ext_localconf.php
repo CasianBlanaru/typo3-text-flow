@@ -8,9 +8,6 @@ if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow']
 }
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'][] = 'PixelCoda\\TextFlow\\ViewHelpers';
 
-// Register the stdWrap hook for text processing
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_postProcess'][\PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class] = \PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class;
-
 // Registriere den Pattern-Installer für die Extension-Installation
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['textFlowPatterns'] = \PixelCoda\TextFlow\Install\PatternInstaller::class;
 
