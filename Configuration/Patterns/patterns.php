@@ -1,7 +1,7 @@
 <?php
 return [
     'de' => [
-        // German hyphenation patterns
+        // Deutsche Trennungsmuster
         ['pattern' => 'sch'],
         ['pattern' => 'ch'],
         ['pattern' => 'ck'],
@@ -20,7 +20,7 @@ return [
         ['pattern' => 'ig'],
     ],
     'en' => [
-        // English hyphenation patterns
+        // Englische Trennungsmuster
         ['pattern' => 'th'],
         ['pattern' => 'ch'],
         ['pattern' => 'sh'],
@@ -35,7 +35,7 @@ return [
         ['pattern' => 'ment'],
     ],
     'fr' => [
-        // French hyphenation patterns
+        // Französische Trennungsmuster
         ['pattern' => 'ch'],
         ['pattern' => 'ph'],
         ['pattern' => 'gn'],
@@ -48,7 +48,7 @@ return [
         ['pattern' => 'euse'],
     ],
     'es' => [
-        // Spanish hyphenation patterns
+        // Spanische Trennungsmuster
         ['pattern' => 'ch'],
         ['pattern' => 'll'],
         ['pattern' => 'rr'],
@@ -60,7 +60,7 @@ return [
         ['pattern' => 'idad'],
     ],
     'it' => [
-        // Italian hyphenation patterns
+        // Italienische Trennungsmuster
         ['pattern' => 'ch'],
         ['pattern' => 'gh'],
         ['pattern' => 'gl'],
@@ -73,7 +73,7 @@ return [
         ['pattern' => 'mente'],
     ],
     'nl' => [
-        // Dutch hyphenation patterns
+        // Niederländische Trennungsmuster
         ['pattern' => 'sch'],
         ['pattern' => 'ch'],
         ['pattern' => 'ij'],
@@ -86,7 +86,7 @@ return [
         ['pattern' => 'lijk'],
     ],
     'pt' => [
-        // Portuguese hyphenation patterns
+        // Portugiesische Trennungsmuster
         ['pattern' => 'ch'],
         ['pattern' => 'lh'],
         ['pattern' => 'nh'],
@@ -98,7 +98,7 @@ return [
         ['pattern' => 'idade'],
     ],
     'zh' => [
-        // Chinese hyphenation patterns (simple examples)
+        // Chinesische Trennungsmuster (einfache Beispiele)
         ['pattern' => '的'],
         ['pattern' => '是'],
         ['pattern' => '在'],
@@ -106,7 +106,7 @@ return [
         ['pattern' => '和'],
     ],
     'ar' => [
-        // Arabic hyphenation patterns (simple examples)
+        // Arabische Trennungsmuster (einfache Beispiele)
         ['pattern' => 'ال'],
         ['pattern' => 'في'],
         ['pattern' => 'من'],
@@ -114,7 +114,7 @@ return [
         ['pattern' => 'إلى'],
     ],
     'hi' => [
-        // Hindi hyphenation patterns (simple examples)
+        // Hindi Trennungsmuster (einfache Beispiele)
         ['pattern' => 'का'],
         ['pattern' => 'की'],
         ['pattern' => 'के'],

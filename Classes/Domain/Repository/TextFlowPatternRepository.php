@@ -19,7 +19,7 @@ class TextFlowPatternRepository extends Repository
      */
     public function findByLanguage(string $language): array
     {
-        // Direct database access for better performance
+        // Direkter Datenbankzugriff für bessere Performance
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_textflow_domain_model_textflowpattern');
 

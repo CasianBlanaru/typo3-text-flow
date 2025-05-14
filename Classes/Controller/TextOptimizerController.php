@@ -15,7 +15,7 @@ class TextOptimizerController extends ActionController
     public function optimizeAction(): ResponseInterface
     {
         $text = $this->request->getArgument('text') ?? '';
-        // Text optimization logic will be implemented here
+        // Hier kommt später die Textoptimierungslogik
         return $this->htmlResponse();
     }
 } 

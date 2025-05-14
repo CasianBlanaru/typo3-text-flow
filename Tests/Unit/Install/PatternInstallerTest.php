@@ -22,19 +22,19 @@ class PatternInstallerTest extends UnitTestCase
     {
         parent::setUp();
 
-        // Connection mock
+        // Mock der Connection
         $this->connectionMock = $this->getMockBuilder(Connection::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        // ConnectionPool mock
+        // Mock des ConnectionPools
         $connectionPoolMock = $this->getMockBuilder(ConnectionPool::class)
             ->disableOriginalConstructor()
             ->getMock();
         $connectionPoolMock->method('getConnectionForTable')
             ->willReturn($this->connectionMock);
 
-        // Logger mock
+        // Mock des Loggers
         $this->loggerMock = $this->getMockBuilder(Logger::class)
             ->disableOriginalConstructor()
             ->getMock();
@@ -45,7 +45,7 @@ class PatternInstallerTest extends UnitTestCase
         $logManagerMock->method('getLogger')
             ->willReturn($this->loggerMock);
 
-        // Register mocks in GeneralUtility
+        // Registriere die Mocks im GeneralUtility
         GeneralUtility::addInstance(ConnectionPool::class, $connectionPoolMock);
         GeneralUtility::addInstance(LogManager::class, $logManagerMock);
 
@@ -64,7 +64,7 @@ class PatternInstallerTest extends UnitTestCase
     public function installPatternsForLanguageInsertsCorrectPatterns(): void
     {
         $language = 'de';
-        $expectedInsertCount = 16; // Number of German patterns
+        $expectedInsertCount = 16; // Anzahl der deutschen Muster
 
         $this->connectionMock->expects(self::once())
             ->method('delete')

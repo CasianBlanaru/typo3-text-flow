@@ -9,7 +9,7 @@ use PixelCoda\TextFlow\Install\PatternInstaller;
 class PatternInstallerHook
 {
     /**
-     * Hook is called when content elements are saved
+     * Hook wird aufgerufen, wenn Inhaltselemente gespeichert werden
      */
     public function processDatamap_afterDatabaseOperations(
         string $status,
@@ -18,18 +18,18 @@ class PatternInstallerHook
         array $fieldArray,
         DataHandler $dataHandler
     ): void {
-        // Check if it is a content element
+        // Prüfe, ob es sich um ein Content-Element handelt
         if ($table === 'tt_content' && isset($fieldArray['enable_textflow'])) {
             $language = $fieldArray['enable_textflow'];
             
-            // If 'all' is selected, install all languages
+            // Wenn 'all' ausgewählt wurde, installiere alle Sprachen
             if ($language === 'all') {
                 $installer = GeneralUtility::makeInstance(PatternInstaller::class);
                 $installer->installAllPatterns();
                 return;
             }
             
-            // For specific language
+            // Für spezifische Sprache
             if (in_array($language, ['de', 'en', 'fr', 'es'])) {
                 $installer = GeneralUtility::makeInstance(PatternInstaller::class);
                 if (!$installer->arePatternsInstalledForLanguage($language)) {

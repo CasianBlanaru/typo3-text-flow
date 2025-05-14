@@ -19,7 +19,7 @@ class PatternInstaller
     }
 
     /**
-     * Install hyphenation patterns for all languages
+     * Installiert die Trennungsmuster für alle Sprachen
      */
     public function installAllPatterns(): void
     {
@@ -31,7 +31,7 @@ class PatternInstaller
     }
 
     /**
-     * Install hyphenation patterns for a specific language
+     * Installiert die Trennungsmuster für eine bestimmte Sprache
      */
     public function installPatternsForLanguage(string $language): void
     {
@@ -43,13 +43,13 @@ class PatternInstaller
         }
 
         try {
-            // Delete existing patterns for this language
+            // Lösche existierende Muster für diese Sprache
             $this->connection->delete(
                 'tx_textflow_domain_model_textflowpattern',
                 ['language' => $language]
             );
 
-            // Add new patterns
+            // Füge neue Muster hinzu
             foreach ($patterns[$language] as $pattern) {
                 $this->connection->insert(
                     'tx_textflow_domain_model_textflowpattern',
@@ -77,7 +77,7 @@ class PatternInstaller
     }
 
     /**
-     * Check if patterns are installed for a language
+     * Prüft, ob Muster für eine Sprache installiert sind
      */
     public function arePatternsInstalledForLanguage(string $language): bool
     {
