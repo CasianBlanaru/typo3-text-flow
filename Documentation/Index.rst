@@ -3,19 +3,19 @@
 .. _start:
 
 ==================
-PixelCoda TextFlow
+TPWD AG TextFlow
 ==================
 
 :Extension key: tpwd_textflow
 :Version: 1.0.0
 :Language: en
 :Author: TPWD AG
-:Company: PixelCoda
+:Company: TPWD AG
 :Email: casianus
 :License: GPL-2.0-or-later
 :Rendered: |today|
 
-PixelCoda TextFlow optimizes text flow in TYPO3 with dynamic hyphenation and
+TPWD AG TextFlow optimizes text flow in TYPO3 with dynamic hyphenation and
 multi-language support, featuring a unique backend interface.
 
 .. toctree::
@@ -34,10 +34,10 @@ TYPO3 TextFlow
 =============
 
 :Extension key: text_flow
-:Package name: pixelcoda/text-flow
+:Package name: tpwd/text-flow
 :Version: |release|
 :Language: en
-:Author: PixelCoda
+:Author: TPWD AG
 :License: GPL-2.0-or-later
 
 TextFlow Extension Manual
@@ -72,7 +72,7 @@ Quick Start Guide
 
 Install via Composer::
 
-    composer require pixelcoda/text-flow
+    composer require tpwd/text-flow
 
 2. Basic Setup
 ~~~~~~~~~~~~
@@ -127,7 +127,7 @@ Note: By default, hyphenation is disabled for all content elements. You need to 
 
 Basic usage::
 
-    {namespace tf=PixelCoda\TextFlow\ViewHelpers}
+    {namespace tf=Tpwd\TextFlow\ViewHelpers}
 
     <tf:process>{text}</tf:process>
 
@@ -146,7 +146,7 @@ In a loop::
 
 Basic usage::
 
-    use PixelCoda\TextFlow\Service\TextFlowService;
+    use Tpwd\TextFlow\Service\TextFlowService;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
@@ -229,7 +229,7 @@ Via backend module:
 
 Programmatically::
 
-    use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
+    use Tpwd\TextFlow\Domain\Repository\TextFlowPatternRepository;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $patternRepository = GeneralUtility::makeInstance(TextFlowPatternRepository::class);
@@ -317,8 +317,8 @@ Support
 
 For questions and issues:
 
-* GitHub Issues: https://github.com/pixelcoda/text-flow/issues
-* Email: support@pixelcoda.com
+* GitHub Issues: https://github.com/tpwd/text-flow/issues
+* Email: support@tpwd.de
 
 License
 ------

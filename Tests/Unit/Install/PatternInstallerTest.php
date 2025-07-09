@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Tpwd\TextFlow\Tests\Unit\Install;
 
 use PHPUnit\Framework\TestCase;
-use PixelCoda\TextFlow\Install\PatternInstaller;
+use Tpwd\TextFlow\Install\PatternInstaller;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Log\Logger;
