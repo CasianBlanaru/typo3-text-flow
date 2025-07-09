@@ -6,24 +6,24 @@ defined('TYPO3') or die();
 if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'])) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'] = [];
 }
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'][] = 'PixelCoda\\TextFlow\\ViewHelpers';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['textflow'][] = 'Tpwd\\TextFlow\\ViewHelpers';
 
 // Register the stdWrap hook for text processing
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_postProcess'][\PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class] = \PixelCoda\TextFlow\Hooks\ContentObjectRendererHook::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['stdWrap_postProcess'][\Tpwd\TextFlow\Hooks\ContentObjectRendererHook::class] = \Tpwd\TextFlow\Hooks\ContentObjectRendererHook::class;
 
 // Register the pattern installer for extension installation
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['textFlowPatterns'] = \PixelCoda\TextFlow\Install\PatternInstaller::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['textFlowPatterns'] = \Tpwd\TextFlow\Install\PatternInstaller::class;
 
 // Register hook for automatic installation of missing patterns
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['text_flow'] =
-    \PixelCoda\TextFlow\Hooks\PatternInstallerHook::class;
+    \Tpwd\TextFlow\Hooks\PatternInstallerHook::class;
 
 // Direct content element rendering hook
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['cObjTypeAndClass']['text'] = [
     'text',
-    \PixelCoda\TextFlow\Hooks\ContentRenderingHook::class
+    \Tpwd\TextFlow\Hooks\ContentRenderingHook::class
 ];
 
 // TYPO3 parseFunc hook for RTE content
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_parsehtml.php']['postTransformTagsHook']['text_flow'] =
-    \PixelCoda\TextFlow\Hooks\TextContentHook::class . '->processContent';
+    \Tpwd\TextFlow\Hooks\TextContentHook::class . '->processContent';

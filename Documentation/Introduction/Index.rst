@@ -9,7 +9,7 @@ Introduction
 What does it do?
 ===============
 
-The PixelCoda TextFlow extension enhances text presentation in TYPO3 by:
+The Tpwd TextFlow extension enhances text presentation in TYPO3 by:
 
 * Implementing intelligent hyphenation algorithms
 * Supporting multiple languages
@@ -56,14 +56,14 @@ Installation
 1. Install via Composer:
    .. code-block:: bash
 
-      composer require pixelcoda/textflow
+      composer require tpwd/textflow
 
 2. Activate the extension in the TYPO3 backend.
 
 3. Include the TypoScript setup:
    .. code-block:: typoscript
 
-      @import 'EXT:pixelcoda_textflow/Configuration/TypoScript/setup.typoscript'
+      @import 'EXT:tpwd_textflow/Configuration/TypoScript/setup.typoscript'
 
 4. Clear the TYPO3 cache.
 

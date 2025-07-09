@@ -18,7 +18,7 @@ Optimizes text flow with dynamic hyphenation for multiple languages.
 ### Via Composer
 
 ```bash
-composer require pixelcoda/text-flow
+composer require tpwd/text-flow
 ```
 
 After installation, make sure to:
@@ -55,7 +55,7 @@ vendor/bin/typo3 textflow:import-patterns
 
 ```html
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:tf="http://typo3.org/ns/PixelCoda/TextFlow/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/Tpwd/TextFlow/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <!-- Basic usage (using the textflow ViewHelper) -->
@@ -113,5 +113,5 @@ GPL-2.0-or-later. See LICENSE file for details.
 ## Support
 
 - Documentation: [docs.typo3.org](https://docs.typo3.org)
-- Issue Tracker: [GitHub Issues](https://github.com/pixelcoda/text-flow/issues)
+- Issue Tracker: [GitHub Issues](https://github.com/tpwd/text-flow/issues)
 - Slack: #ext-text-flow on typo3.slack.com

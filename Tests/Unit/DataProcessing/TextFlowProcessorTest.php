@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\DataProcessing;
+namespace Tpwd\TextFlow\Tests\Unit\DataProcessing;
 
-use PixelCoda\TextFlow\DataProcessing\TextFlowProcessor;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\DataProcessing\TextFlowProcessor;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use Psr\Log\LoggerInterface;

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Tests\Unit\Service;
+namespace Tpwd\TextFlow\Tests\Unit\Service;
 
-use PixelCoda\TextFlow\Domain\Model\TextFlowPattern;
-use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Domain\Model\TextFlowPattern;
+use Tpwd\TextFlow\Domain\Repository\TextFlowPatternRepository;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Core\Site\Entity\Site;

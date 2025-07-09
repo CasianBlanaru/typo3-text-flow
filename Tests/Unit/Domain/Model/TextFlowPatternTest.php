@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Tests\Unit\Domain\Model;
+namespace Tpwd\TextFlow\Tests\Unit\Domain\Model;
 
-use PixelCoda\TextFlow\Domain\Model\TextFlowPattern;
+use Tpwd\TextFlow\Domain\Model\TextFlowPattern;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**

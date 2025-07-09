@@ -80,7 +80,7 @@ Example Configuration
 
 .. code-block:: typoscript
 
-   plugin.tx_pixelcodatextflow {
+   plugin.tx_tpwdtextflow {
        settings {
            enableHyphenation = 1
            defaultLanguage = en

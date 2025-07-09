@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\ViewHelpers;
+namespace Tpwd\TextFlow\ViewHelpers;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

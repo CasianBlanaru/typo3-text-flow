@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\DataProcessing;
+namespace Tpwd\TextFlow\DataProcessing;
 
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;

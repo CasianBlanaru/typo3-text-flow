@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\Install;
+namespace Tpwd\TextFlow\Tests\Unit\Install;
 
 use PHPUnit\Framework\TestCase;
 use PixelCoda\TextFlow\Install\PatternInstaller;

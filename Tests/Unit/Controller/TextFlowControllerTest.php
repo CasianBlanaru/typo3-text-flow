@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\Controller;
+namespace Tpwd\TextFlow\Tests\Unit\Controller;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Message\ResponseInterface;
-use PixelCoda\TextFlow\Controller\TextFlowController;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Controller\TextFlowController;
+use Tpwd\TextFlow\Service\TextFlowService;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Extbase\Mvc\Controller\Arguments;

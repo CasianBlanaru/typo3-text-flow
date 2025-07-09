@@ -13,13 +13,13 @@ plugin.tx_textflow {
     }
 }
 
-plugin.tx_pixelcodatextflow {
+plugin.tx_tpwdtextflow {
     view {
-        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template root (FE)
-        templateRootPath = EXT:pixelcoda_textflow/Resources/Private/Templates/
-        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template partials (FE)
-        partialRootPath = EXT:pixelcoda_textflow/Resources/Private/Partials/
-        # cat=plugin.tx_pixelcodatextflow/file; type=string; label=Path to template layouts (FE)
-        layoutRootPath = EXT:pixelcoda_textflow/Resources/Private/Layouts/
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:tpwd_textflow/Resources/Private/Templates/
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:tpwd_textflow/Resources/Private/Partials/
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:tpwd_textflow/Resources/Private/Layouts/
     }
 }

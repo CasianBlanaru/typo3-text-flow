@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Command;
+namespace Tpwd\TextFlow\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

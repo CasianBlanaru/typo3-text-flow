@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\ViewHelpers;
+namespace Tpwd\TextFlow\Tests\Unit\ViewHelpers;
 
-use PixelCoda\TextFlow\ViewHelpers\OptimizeViewHelper;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\ViewHelpers\OptimizeViewHelper;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInterface;

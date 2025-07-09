@@ -2,7 +2,7 @@
 declare(strict_types=1);
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:pixelcoda_textflow/Resources/Private/Language/locallang.xlf:textflow_pattern',
+        'title' => 'LLL:EXT:tpwd_textflow/Resources/Private/Language/locallang.xlf:textflow_pattern',
         'label' => 'pattern',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,7 +12,7 @@ return [
             'disabled' => 'hidden',
         ],
         'searchFields' => 'language,pattern',
-        'iconfile' => 'EXT:pixelcoda_textflow/Resources/Public/Icons/Extension.svg',
+        'iconfile' => 'EXT:tpwd_textflow/Resources/Public/Icons/Extension.svg',
     ],
     'columns' => [
         'hidden' => [
@@ -26,7 +26,7 @@ return [
         ],
         'language' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:pixelcoda_textflow/Resources/Private/Language/locallang.xlf:language',
+            'label' => 'LLL:EXT:tpwd_textflow/Resources/Private/Language/locallang.xlf:language',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -35,7 +35,7 @@ return [
         ],
         'pattern' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:pixelcoda_textflow/Resources/Private/Language/locallang.xlf:pattern',
+            'label' => 'LLL:EXT:tpwd_textflow/Resources/Private/Language/locallang.xlf:pattern',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -46,4 +46,4 @@ return [
     'types' => [
         '1' => ['showitem' => 'hidden, language, pattern'],
     ],
-];
+]; 

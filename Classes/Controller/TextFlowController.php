@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Controller;
+namespace Tpwd\TextFlow\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Service\TextFlowService;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;

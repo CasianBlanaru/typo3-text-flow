@@ -6,10 +6,10 @@
 PixelCoda TextFlow
 ==================
 
-:Extension key: pixelcoda_textflow
+:Extension key: tpwd_textflow
 :Version: 1.0.0
 :Language: en
-:Author: Casian Blanaru
+:Author: TPWD AG
 :Company: PixelCoda
 :Email: casianus
 :License: GPL-2.0-or-later

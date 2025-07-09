@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\ViewHelpers;
+namespace Tpwd\TextFlow\ViewHelpers;
 
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;

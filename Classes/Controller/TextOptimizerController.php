@@ -1,6 +1,6 @@
 <?php
 
-namespace PixelCoda\TextFlow\Controller;
+namespace Tpwd\TextFlow\Controller;
 
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;

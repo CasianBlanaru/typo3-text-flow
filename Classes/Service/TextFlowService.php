@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Service;
+namespace Tpwd\TextFlow\Service;
 
-use PixelCoda\TextFlow\Domain\Repository\TextFlowPatternRepository;
+use Tpwd\TextFlow\Domain\Repository\TextFlowPatternRepository;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Log\LogManager;

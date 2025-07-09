@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\Hooks;
+namespace Tpwd\TextFlow\Tests\Unit\Hooks;
 
-use PixelCoda\TextFlow\Hooks\PageLayoutViewDrawItemHook;
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Hooks\PageLayoutViewDrawItemHook;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Hooks;
+namespace Tpwd\TextFlow\Hooks;
 
-use PixelCoda\TextFlow\Service\TextFlowService;
+use Tpwd\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\AbstractContentObject;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace PixelCoda\TextFlow\Tests\Unit\Hooks;
+namespace Tpwd\TextFlow\Tests\Unit\Hooks;
 
-use PixelCoda\TextFlow\Hooks\PatternInstallerHook;
-use PixelCoda\TextFlow\Install\PatternInstaller;
+use Tpwd\TextFlow\Hooks\PatternInstallerHook;
+use Tpwd\TextFlow\Install\PatternInstaller;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;

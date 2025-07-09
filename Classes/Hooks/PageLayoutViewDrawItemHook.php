@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Hooks;
+namespace Tpwd\TextFlow\Hooks;
 
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;

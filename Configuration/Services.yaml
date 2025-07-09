@@ -4,18 +4,18 @@ services:
     autoconfigure: true
     public: false
 
-  PixelCoda\TextFlow\:
+  Tpwd\TextFlow\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  PixelCoda\TextFlow\Controller\TextFlowController:
+  Tpwd\TextFlow\Controller\TextFlowController:
     public: true
     tags: ['backend.controller']
 
-  PixelCoda\TextFlow\Service\TextFlowService:
+  Tpwd\TextFlow\Service\TextFlowService:
     public: true
 
-  PixelCoda\TextFlow\Command\ImportPatternsCommand:
+  Tpwd\TextFlow\Command\ImportPatternsCommand:
     tags:
       - name: 'console.command'
         command: 'textflow:import-patterns'

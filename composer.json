@@ -1,12 +1,12 @@
 {
-    "name": "pixelcoda/typo3-text-flow",
+    "name": "tpwd/typo3-text-flow",
     "type": "typo3-cms-extension",
     "description": "Optimizes text flow with dynamic hyphenation",
     "license": "MIT",
     "authors": [
       {
-        "name": "Casian Blanaru",
-        "email": "casianus@me.com",
+                  "name": "TPWD AG",
+        "email": "cab@tpwd.de",
         "role": "Developer"
       }
     ],
@@ -21,12 +21,12 @@
     },
     "autoload": {
       "psr-4": {
-        "PixelCoda\\TextFlow\\": "Classes/"
+        "Tpwd\\TextFlow\\": "Classes/"
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "PixelCoda\\TextFlow\\Tests\\": "Tests/"
+        "Tpwd\\TextFlow\\Tests\\": "Tests/"
       }
     },
     "require-dev": {

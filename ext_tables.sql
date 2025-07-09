@@ -1,4 +1,4 @@
-CREATE TABLE tx_textflow_domain_model_textflowpattern (
+CREATE TABLE tx_tpwdtextflow_domain_model_textflowpattern (
     uid int(11) NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
     tstamp int(11) DEFAULT '0' NOT NULL,

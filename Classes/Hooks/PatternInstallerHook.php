@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace PixelCoda\TextFlow\Hooks;
+namespace Tpwd\TextFlow\Hooks;
 
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use PixelCoda\TextFlow\Install\PatternInstaller;
+use Tpwd\TextFlow\Install\PatternInstaller;
 
 class PatternInstallerHook
 {
