@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\Hooks;
+namespace Tpwdag\TextFlow\Tests\Unit\Hooks;
 
-use Tpwd\TextFlow\Hooks\PageLayoutViewDrawItemHook;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Hooks\PageLayoutViewDrawItemHook;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

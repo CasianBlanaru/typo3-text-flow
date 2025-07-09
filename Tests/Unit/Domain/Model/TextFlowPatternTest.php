@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Tests\Unit\Domain\Model;
+namespace Tpwdag\TextFlow\Tests\Unit\Domain\Model;
 
-use Tpwd\TextFlow\Domain\Model\TextFlowPattern;
+use Tpwdag\TextFlow\Domain\Model\TextFlowPattern;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**

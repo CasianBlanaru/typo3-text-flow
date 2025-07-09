@@ -1,6 +1,6 @@
 <?php
 
-namespace Tpwd\TextFlow\Controller;
+namespace Tpwdag\TextFlow\Controller;
 
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;

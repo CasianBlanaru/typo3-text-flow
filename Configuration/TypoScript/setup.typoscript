@@ -36,7 +36,7 @@ plugin.tx_textflow {
 
 # Globale TextFlow-Aktivierung für alle Content-Elements
 lib.contentElement {
-    stdWrap.postUserFunc = Tpwd\TextFlow\Service\TextFlowService->hyphenate
+    stdWrap.postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
     stdWrap.postUserFunc {
         enable = 1
         preserveStructure = 1
@@ -46,7 +46,7 @@ lib.contentElement {
 # Configure Text parsing with TextFlow
 lib.parseFunc_RTE {
     nonTypoTagStdWrap {
-        postUserFunc = Tpwd\TextFlow\Service\TextFlowService->hyphenate
+        postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
         postUserFunc.enable = 1
         postUserFunc.preserveStructure = 1
     }
@@ -58,7 +58,7 @@ plugin.tx_textflow_textoptimizer {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = TextFlow
     pluginName = TextOptimizer
-    vendorName = Tpwd
+    vendorName = Tpwdag
 
     view < plugin.tx_textflow.view
     persistence < plugin.tx_textflow.persistence
@@ -71,7 +71,7 @@ plugin.tx_textflow_show {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = TextFlow
     pluginName = Show
-    vendorName = Tpwd
+    vendorName = Tpwdag
 
     view < plugin.tx_textflow.view
     persistence < plugin.tx_textflow.persistence
@@ -103,7 +103,7 @@ tt_content {
         stdWrap.parseFunc =< lib.parseFunc_RTE
         stdWrap.parseFunc {
             nonTypoTagStdWrap {
-                postUserFunc = Tpwd\TextFlow\Service\TextFlowService->hyphenate
+                postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
                 postUserFunc.enable = 1
                 postUserFunc.preserveStructure = 1
             }
@@ -167,7 +167,7 @@ lib.contentElement {
         parseFunc =< lib.parseFunc_RTE
         parseFunc {
             nonTypoTagStdWrap {
-                postUserFunc = Tpwd\TextFlow\Service\TextFlowService->hyphenate
+                postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
                 postUserFunc.enable = 1
             }
         }

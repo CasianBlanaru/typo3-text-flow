@@ -55,7 +55,7 @@ vendor/bin/typo3 textflow:import-patterns
 
 ```html
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:tf="http://typo3.org/ns/Tpwd/TextFlow/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/Tpwdag/TextFlow/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <!-- Basic usage (using the textflow ViewHelper) -->

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Hooks;
+namespace Tpwdag\TextFlow\Hooks;
 
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**

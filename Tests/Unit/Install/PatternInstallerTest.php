@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\Install;
+namespace Tpwdag\TextFlow\Tests\Unit\Install;
 
 use PHPUnit\Framework\TestCase;
-use Tpwd\TextFlow\Install\PatternInstaller;
+use Tpwdag\TextFlow\Install\PatternInstaller;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Log\Logger;

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Hooks;
+namespace Tpwdag\TextFlow\Hooks;
 
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Tpwd\TextFlow\Install\PatternInstaller;
+use Tpwdag\TextFlow\Install\PatternInstaller;
 
 class PatternInstallerHook
 {

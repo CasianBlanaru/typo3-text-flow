@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Domain\Model;
+namespace Tpwdag\TextFlow\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 

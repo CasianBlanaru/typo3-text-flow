@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\ViewHelpers;
+namespace Tpwdag\TextFlow\Tests\Unit\ViewHelpers;
 
-use Tpwd\TextFlow\ViewHelpers\OptimizeViewHelper;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\ViewHelpers\OptimizeViewHelper;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInterface;

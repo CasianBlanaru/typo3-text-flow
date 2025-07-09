@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\Hooks;
+namespace Tpwdag\TextFlow\Tests\Unit\Hooks;
 
-use Tpwd\TextFlow\Hooks\ContentObjectRendererHook;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Hooks\ContentObjectRendererHook;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use Psr\Log\LoggerInterface;

@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Domain\Repository;
+namespace Tpwdag\TextFlow\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Repository;

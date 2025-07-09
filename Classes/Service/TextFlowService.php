@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Service;
+namespace Tpwdag\TextFlow\Service;
 
-use Tpwd\TextFlow\Domain\Repository\TextFlowPatternRepository;
+use Tpwdag\TextFlow\Domain\Repository\TextFlowPatternRepository;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Log\LogManager;

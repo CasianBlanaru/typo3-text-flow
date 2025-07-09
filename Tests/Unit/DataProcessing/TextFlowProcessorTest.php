@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\DataProcessing;
+namespace Tpwdag\TextFlow\Tests\Unit\DataProcessing;
 
-use Tpwd\TextFlow\DataProcessing\TextFlowProcessor;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\DataProcessing\TextFlowProcessor;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use Psr\Log\LoggerInterface;

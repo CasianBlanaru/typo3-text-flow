@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\ViewHelpers;
+namespace Tpwdag\TextFlow\Tests\Unit\ViewHelpers;
 
 use PHPUnit\Framework\TestCase;
-use Tpwd\TextFlow\Service\TextFlowService;
-use Tpwd\TextFlow\ViewHelpers\ProcessViewHelper;
+use Tpwdag\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\ViewHelpers\ProcessViewHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInterface;

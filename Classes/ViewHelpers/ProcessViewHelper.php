@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\ViewHelpers;
+namespace Tpwdag\TextFlow\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Service\TextFlowService;
 
 class ProcessViewHelper extends AbstractViewHelper
 {

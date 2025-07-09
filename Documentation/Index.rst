@@ -127,7 +127,7 @@ Note: By default, hyphenation is disabled for all content elements. You need to 
 
 Basic usage::
 
-    {namespace tf=Tpwd\TextFlow\ViewHelpers}
+    {namespace tf=Tpwdag\TextFlow\ViewHelpers}
 
     <tf:process>{text}</tf:process>
 
@@ -146,7 +146,7 @@ In a loop::
 
 Basic usage::
 
-    use Tpwd\TextFlow\Service\TextFlowService;
+    use Tpwdag\TextFlow\Service\TextFlowService;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $textFlowService = GeneralUtility::makeInstance(TextFlowService::class);
@@ -229,7 +229,7 @@ Via backend module:
 
 Programmatically::
 
-    use Tpwd\TextFlow\Domain\Repository\TextFlowPatternRepository;
+    use Tpwdag\TextFlow\Domain\Repository\TextFlowPatternRepository;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $patternRepository = GeneralUtility::makeInstance(TextFlowPatternRepository::class);

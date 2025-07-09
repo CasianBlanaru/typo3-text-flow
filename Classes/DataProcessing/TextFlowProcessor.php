@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\DataProcessing;
+namespace Tpwdag\TextFlow\DataProcessing;
 
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tpwd\TextFlow\Tests\Unit\Hooks;
+namespace Tpwdag\TextFlow\Tests\Unit\Hooks;
 
-use Tpwd\TextFlow\Hooks\PatternInstallerHook;
-use Tpwd\TextFlow\Install\PatternInstaller;
+use Tpwdag\TextFlow\Hooks\PatternInstallerHook;
+use Tpwdag\TextFlow\Install\PatternInstaller;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;

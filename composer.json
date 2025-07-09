@@ -21,12 +21,12 @@
     },
     "autoload": {
       "psr-4": {
-        "Tpwd\\TextFlow\\": "Classes/"
+        "Tpwdag\\TextFlow\\": "Classes/"
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "Tpwd\\TextFlow\\Tests\\": "Tests/"
+        "Tpwdag\\TextFlow\\Tests\\": "Tests/"
       }
     },
     "require-dev": {

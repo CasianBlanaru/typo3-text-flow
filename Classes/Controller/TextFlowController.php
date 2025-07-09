@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Tpwd\TextFlow\Controller;
+namespace Tpwdag\TextFlow\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use Tpwd\TextFlow\Service\TextFlowService;
+use Tpwdag\TextFlow\Service\TextFlowService;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;

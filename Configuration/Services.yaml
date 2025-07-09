@@ -4,18 +4,18 @@ services:
     autoconfigure: true
     public: false
 
-  Tpwd\TextFlow\:
+  Tpwdag\TextFlow\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  Tpwd\TextFlow\Controller\TextFlowController:
+  Tpwdag\TextFlow\Controller\TextFlowController:
     public: true
     tags: ['backend.controller']
 
-  Tpwd\TextFlow\Service\TextFlowService:
+  Tpwdag\TextFlow\Service\TextFlowService:
     public: true
 
-  Tpwd\TextFlow\Command\ImportPatternsCommand:
+  Tpwdag\TextFlow\Command\ImportPatternsCommand:
     tags:
       - name: 'console.command'
         command: 'textflow:import-patterns'
