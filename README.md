@@ -18,7 +18,7 @@ Optimizes text flow with dynamic hyphenation for multiple languages.
 ### Via Composer
 
 ```bash
-composer require tpwd/text-flow
+composer require tpwdag/text-flow
 ```
 
 After installation, make sure to:
@@ -113,5 +113,5 @@ GPL-2.0-or-later. See LICENSE file for details.
 ## Support
 
 - Documentation: [docs.typo3.org](https://docs.typo3.org)
-- Issue Tracker: [GitHub Issues](https://github.com/tpwd/text-flow/issues)
+- Issue Tracker: [GitHub Issues](https://github.com/tpwdag/text-flow/issues)
 - Slack: #ext-text-flow on typo3.slack.com

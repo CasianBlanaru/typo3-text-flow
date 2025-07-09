@@ -56,7 +56,7 @@ Installation
 1. Install via Composer:
    .. code-block:: bash
 
-      composer require tpwd/textflow
+      composer require tpwdag/textflow
 
 2. Activate the extension in the TYPO3 backend.
 

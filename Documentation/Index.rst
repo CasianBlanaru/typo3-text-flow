@@ -34,7 +34,7 @@ TYPO3 TextFlow
 =============
 
 :Extension key: text_flow
-:Package name: tpwd/text-flow
+:Package name: tpwdag/text-flow
 :Version: |release|
 :Language: en
 :Author: TPWD AG
@@ -72,7 +72,7 @@ Quick Start Guide
 
 Install via Composer::
 
-    composer require tpwd/text-flow
+    composer require tpwdag/text-flow
 
 2. Basic Setup
 ~~~~~~~~~~~~
@@ -317,7 +317,7 @@ Support
 
 For questions and issues:
 
-* GitHub Issues: https://github.com/tpwd/text-flow/issues
+* GitHub Issues: https://github.com/tpwdag/text-flow/issues
 * Email: support@tpwd.de
 
 License

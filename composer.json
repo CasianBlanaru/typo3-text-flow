@@ -1,5 +1,5 @@
 {
-    "name": "tpwd/typo3-text-flow",
+    "name": "tpwdag/typo3-text-flow",
     "type": "typo3-cms-extension",
     "description": "Optimizes text flow with dynamic hyphenation",
     "license": "MIT",
