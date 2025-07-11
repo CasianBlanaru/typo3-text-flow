@@ -113,5 +113,5 @@ GPL-2.0-or-later. See LICENSE file for details.
 ## Support
 
 - Documentation: [docs.typo3.org](https://docs.typo3.org)
-- Issue Tracker: [GitLab Issues](https://gitlab.tpwd.de/tpwd/typo3-text-flow/-/issues)
-- Repository: [GitLab Repository](https://gitlab.tpwd.de/tpwd/typo3-text-flow)
+- Issue Tracker: [GitLab Issues](https://github.com/tpwd/typo3-text-flow/issues)
+- Repository: [GitLab Repository](https://github.com/tpwd/typo3-text-flow)
