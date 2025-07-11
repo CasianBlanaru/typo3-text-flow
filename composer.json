@@ -1,9 +1,9 @@
 {
-    "name": "casianblanaru/typo3-text-flow",
+    "name": "tpwd/typo3-text-flow",
     "type": "typo3-cms-extension",
     "description": "TYPO3 extension for optimizing text flow with dynamic hyphenation and text processing",
     "keywords": ["typo3", "extension", "text", "hyphenation", "typography", "text-flow"],
-    "homepage": "https://github.com/casianblanaru/typo3-text-flow",
+    "homepage": "https://github.com/tpwd/typo3-text-flow",
     "license": "MIT",
     "authors": [
         {
@@ -14,8 +14,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/casianblanaru/typo3-text-flow/issues",
-        "source": "https://github.com/casianblanaru/typo3-text-flow"
+        "issues": "https://github.com/tpwd/typo3-text-flow/issues",
+        "source": "https://github.com/tpwd/typo3-text-flow"
     },
     "require": {
         "php": "^8.1",
