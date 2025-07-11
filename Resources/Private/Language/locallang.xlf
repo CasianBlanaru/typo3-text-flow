@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-03-20T12:00:00Z" product-name="text_flow">
+        <header/>
+        <body>
+            <trans-unit id="enable_textflow">
+                <source>Text Flow Language</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.all">
+                <source>All Languages</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.de">
+                <source>German</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.en">
+                <source>English</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.fr">
+                <source>French</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.es">
+                <source>Spanish</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.it">
+                <source>Italian</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.nl">
+                <source>Dutch</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.pt">
+                <source>Portuguese</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.zh">
+                <source>Chinese</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.ar">
+                <source>Arabic</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.hi">
+                <source>Hindi</source>
+            </trans-unit>
+            <trans-unit id="enable_textflow.none">
+                <source>Disabled</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

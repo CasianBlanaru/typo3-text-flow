@@ -1,0 +1,52 @@
+{
+    "name": "tpwdag/typo3-text-flow",
+    "type": "typo3-cms-extension",
+    "description": "TYPO3 extension for optimizing text flow with dynamic hyphenation and text processing",
+    "keywords": ["typo3", "extension", "text", "hyphenation", "typography", "text-flow"],
+    "homepage": "https://gitlab.tpwd.de/tpwd/typo3-text-flow",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://gitlab.tpwd.de/tpwd/typo3-text-flow.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "TPWD AG",
+            "email": "cab@tpwd.de",
+            "role": "Developer",
+            "homepage": "https://www.tpwd.de"
+        }
+    ],
+    "support": {
+        "issues": "https://gitlab.tpwd.de/tpwd/typo3-text-flow/-/issues",
+        "source": "https://gitlab.tpwd.de/tpwd/typo3-text-flow"
+    },
+    "require": {
+        "php": "^8.1",
+        "typo3/cms-core": "^12.0",
+        "typo3/cms-fluid": "^12.0"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^8.0",
+        "phpstan/phpstan": "^1.10",
+        "typo3/coding-standards": "^0.7"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "text_flow"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Tpwdag\\TextFlow\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tpwdag\\TextFlow\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}

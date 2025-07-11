@@ -1,0 +1,175 @@
+# Main TextFlow Plugin configuration
+plugin.tx_textflow {
+    view {
+        templateRootPaths {
+            0 = EXT:text_flow/Resources/Private/Templates/
+            10 = {$plugin.tx_textflow.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:text_flow/Resources/Private/Partials/
+            10 = {$plugin.tx_textflow.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:text_flow/Resources/Private/Layouts/
+            10 = {$plugin.tx_textflow.view.layoutRootPath}
+        }
+    }
+    persistence {
+        storagePid = {$plugin.tx_textflow.persistence.storagePid}
+    }
+
+    settings {
+        # Default text processing settings
+        enableHyphenation = 1
+        enableSmartQuotes = 1
+        showWordCount = 0
+        showDebugInformation = 0
+        cacheLifetime = 3600
+        defaultLanguage = de
+    }
+
+    features {
+        skipDefaultArguments = 1
+        requireCHashArgumentForActionArguments = 1
+    }
+}
+
+# Globale TextFlow-Aktivierung für alle Content-Elements
+lib.contentElement {
+    stdWrap.postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
+    stdWrap.postUserFunc {
+        enable = 1
+        preserveStructure = 1
+    }
+}
+
+# Configure Text parsing with TextFlow
+lib.parseFunc_RTE {
+    nonTypoTagStdWrap {
+        postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
+        postUserFunc.enable = 1
+        postUserFunc.preserveStructure = 1
+    }
+}
+
+# TextOptimizer Plugin Configuration
+plugin.tx_textflow_textoptimizer = USER
+plugin.tx_textflow_textoptimizer {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = TextFlow
+    pluginName = TextOptimizer
+    vendorName = Tpwdag
+
+    view < plugin.tx_textflow.view
+    persistence < plugin.tx_textflow.persistence
+    settings < plugin.tx_textflow.settings
+}
+
+# Show Plugin Configuration
+plugin.tx_textflow_show = USER
+plugin.tx_textflow_show {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = TextFlow
+    pluginName = Show
+    vendorName = Tpwdag
+
+    view < plugin.tx_textflow.view
+    persistence < plugin.tx_textflow.persistence
+    settings < plugin.tx_textflow.settings
+}
+
+# Configure TextFlow Content Element
+tt_content {
+    textflow =< lib.contentElement
+    textflow {
+        templateName = TextFlow
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        }
+
+        settings {
+            defaultHeaderType = 2
+        }
+    }
+}
+
+# Override Standard Text Element
+tt_content {
+    text =< lib.contentElement
+    text {
+        templateName = Text
+
+        stdWrap.parseFunc =< lib.parseFunc_RTE
+        stdWrap.parseFunc {
+            nonTypoTagStdWrap {
+                postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
+                postUserFunc.enable = 1
+                postUserFunc.preserveStructure = 1
+            }
+        }
+    }
+
+    textmedia =< tt_content.text
+    textpic =< tt_content.text
+    header =< tt_content.text
+    bullets =< tt_content.text
+}
+
+# Plugin configuration
+plugin.tx_textflow {
+    view {
+        templateRootPaths {
+            0 = EXT:text_flow/Resources/Private/Templates/
+            10 = {$plugin.tx_textflow.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:text_flow/Resources/Private/Partials/
+            10 = {$plugin.tx_textflow.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:text_flow/Resources/Private/Layouts/
+            10 = {$plugin.tx_textflow.view.layoutRootPath}
+        }
+    }
+
+    settings {
+        enableHyphenation = 1
+        enableSmartQuotes = 1
+        showWordCount = 1
+        showDebugInformation = 1
+    }
+}
+
+plugin.tx_textflow_textoptimizer < plugin.tx_textflow
+plugin.tx_textflow_textoptimizer {
+    settings {
+        templateName = TextFlow
+    }
+}
+
+# Configure default content rendering
+lib.contentElement {
+    templateRootPaths {
+        0 = EXT:fluid_styled_content/Resources/Private/Templates/
+        10 = EXT:text_flow/Resources/Private/Templates/
+    }
+    partialRootPaths {
+        0 = EXT:fluid_styled_content/Resources/Private/Partials/
+        10 = EXT:text_flow/Resources/Private/Partials/
+    }
+    layoutRootPaths {
+        0 = EXT:fluid_styled_content/Resources/Private/Layouts/
+        10 = EXT:text_flow/Resources/Private/Layouts/
+    }
+
+    stdWrap {
+        parseFunc =< lib.parseFunc_RTE
+        parseFunc {
+            nonTypoTagStdWrap {
+                postUserFunc = Tpwdag\TextFlow\Service\TextFlowService->hyphenate
+                postUserFunc.enable = 1
+            }
+        }
+    }
+}

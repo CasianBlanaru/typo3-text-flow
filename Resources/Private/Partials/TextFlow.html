@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<div class="textflow-content">
+    <f:if condition="{hyphenatedText}">
+        <div class="text-container">
+            <f:if condition="{settings.enableSmartQuotes}">
+                <p class="smart-quotes">{hyphenatedText -> f:format.raw()}</p>
+            </f:if>
+            <f:else>
+                <p>{hyphenatedText -> f:format.raw()}</p>
+            </f:else>
+        </div>
+        <f:if condition="{settings.showWordCount}">
+            <div class="text-statistics">
+                <p>Wortanzahl: {f:count(subject: hyphenatedText -> f:split(delimiter: ' '))}</p>
+            </div>
+        </f:if>
+    </f:if>
+    <f:else>
+        <p class="text-empty">Kein Text vorhanden.</p>
+    </f:else>
+</div>
+</html> 

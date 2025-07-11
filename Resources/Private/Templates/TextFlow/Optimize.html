@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/Tpwdag/TextFlow/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path:'Css/text_flow.css')}" />
+</f:section>
+
+<f:section name="Main">
+    <div class="text-flow-optimizer">
+        <f:form action="optimize" method="post" class="text-flow-form" name="textOptimizer">
+            <div class="form-group">
+                <label for="text">Text zum Optimieren:</label>
+                <f:form.textarea property="text" id="text" class="form-control" value="{originalText}" rows="5" required="required" />
+                <small class="text-muted form-text">Bitte geben Sie hier den zu optimierenden Text ein.</small>
+            </div>
+            <div class="form-group">
+                <f:form.submit value="Text optimieren" class="btn btn-primary" />
+            </div>
+        </f:form>
+
+        <f:if condition="{error}">
+            <f:then>
+                <div class="alert alert-warning">
+                    {error}
+                </div>
+            </f:then>
+            <f:else>
+                <f:if condition="{optimizedText}">
+                    <div class="text-flow-result">
+                        <div class="text-flow-original">
+                            <h3>Original Text</h3>
+                            <div class="content">
+                                {originalText -> f:format.raw()}
+                            </div>
+                        </div>
+                        
+                        <div class="text-flow-optimized">
+                            <h3>Optimierter Text</h3>
+                            <div class="content">
+                                {optimizedText -> f:format.raw()}
+                            </div>
+                        </div>
+                    </div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+</html> 

@@ -1,0 +1,25 @@
+plugin.tx_textflow {
+    view {
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:text_flow/Resources/Private/Templates/
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:text_flow/Resources/Private/Partials/
+        # cat=plugin.tx_textflow/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:text_flow/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_textflow//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+
+plugin.tx_tpwdtextflow {
+    view {
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:tpwd_textflow/Resources/Private/Templates/
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:tpwd_textflow/Resources/Private/Partials/
+        # cat=plugin.tx_tpwdtextflow/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:tpwd_textflow/Resources/Private/Layouts/
+    }
+}

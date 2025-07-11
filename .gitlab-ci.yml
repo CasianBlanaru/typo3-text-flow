@@ -1,0 +1,18 @@
+stages:
+  - update-packagist
+
+update_packagist:
+  stage: update-packagist
+  image: curlimages/curl:latest
+  script:
+    - |
+      curl -XPOST -H'content-type:application/json' \
+        "https://packagist.org/api/update-package?username=${PACKAGIST_USERNAME}&apiToken=${PACKAGIST_TOKEN}" \
+        -d'{"repository":{"url":"https://gitlab.tpwd.de/tpwd/typo3-text-flow"}}'
+  only:
+    - master
+    - main
+    - tags
+  # Variables müssen in GitLab unter Settings > CI/CD > Variables gesetzt werden:
+  # PACKAGIST_USERNAME: Ihr Packagist-Benutzername  
+  # PACKAGIST_TOKEN: Ihr Packagist API Token 

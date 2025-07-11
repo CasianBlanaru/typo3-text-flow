@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Tpwdag\TextFlow\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  Tpwdag\TextFlow\Controller\TextFlowController:
+    public: true
+    tags: ['backend.controller']
+
+  Tpwdag\TextFlow\Service\TextFlowService:
+    public: true
+
+  Tpwdag\TextFlow\Command\ImportPatternsCommand:
+    tags:
+      - name: 'console.command'
+        command: 'textflow:import-patterns'
+        description: 'Imports additional language patterns for TextFlow'

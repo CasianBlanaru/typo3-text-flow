@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-03-20T12:00:00Z" product-name="text_flow">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.enable_textflow">
+                <source>Text Flow Language</source>
+            </trans-unit>
+            <trans-unit id="tt_content.enable_textflow.all">
+                <source>All Languages</source>
+            </trans-unit>
+            <trans-unit id="tt_content.enable_textflow.de">
+                <source>German</source>
+            </trans-unit>
+            <trans-unit id="tt_content.enable_textflow.en">
+                <source>English</source>
+            </trans-unit>
+            <trans-unit id="tt_content.enable_textflow.none">
+                <source>Disabled</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff> 

@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:tf="http://typo3.org/ns/Tpwdag/TextFlow/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<!--
+    Examples for using the TextFlow ViewHelper
+
+    This ViewHelper automatically checks if hyphenation is enabled for the content element
+    and applies it according to the selected setting.
+-->
+
+<h2>Beispiele für die Verwendung des TextFlow ViewHelpers</h2>
+
+<h3>1. Grundlegende Verwendung mit Text</h3>
+<div class="example-code">
+    <code>&lt;tf:textflow&gt;Ihr Text hier&lt;/tf:textflow&gt;</code>
+</div>
+<div class="example-result">
+    <tf:textflow>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    </tf:textflow>
+</div>
+
+<h3>2. Verwendung mit Text-Parameter</h3>
+<div class="example-code">
+    <code>&lt;tf:textflow text="Ihr Text hier" /&gt;</code>
+</div>
+<div class="example-result">
+    <tf:textflow text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." />
+</div>
+
+<h3>3. Verwendung mit Sprachparameter</h3>
+<div class="example-code">
+    <code>&lt;tf:textflow text="Ihr Text hier" language="de" /&gt;</code>
+</div>
+<div class="example-result">
+    <tf:textflow text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." language="de" />
+</div>
+
+<h3>4. Verwendung mit Content-Element-Daten</h3>
+<div class="example-code">
+    <code>&lt;tf:textflow data="{data}" language="de"&gt;Ihr Text hier&lt;/tf:textflow&gt;</code>
+</div>
+<div class="example-result">
+    <!-- Hinweis: Diese Beispiele benötigen tatsächliche Content-Element-Daten -->
+    <p>Hinweis: Im realen Einsatz würde dies nur aktiviert sein, wenn das Content-Element TextFlow aktiviert hat.</p>
+</div>
+
+<h3>5. Verwendung mit HTML-Formatierung</h3>
+<div class="example-code">
+    <code>
+&lt;tf:textflow&gt;
+    {text -> f:format.html()}
+&lt;/tf:textflow&gt;
+    </code>
+</div>
+<div class="example-result">
+    <tf:textflow>
+        <p>Lorem ipsum dolor sit amet, <strong>consetetur sadipscing elitr</strong>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </tf:textflow>
+</div>
+
+<h3>Debug-Modus</h3>
+<p>Um den Debug-Modus zu aktivieren, fügen Sie den Parameter <code>?debug_textflow=1</code> oder <code>?debug_textflow=3</code> zur URL hinzu.</p>
+<p>Der Debug-Modus zeigt Silbentrennungsmarkierungen nur für Elemente an, bei denen TextFlow aktiviert ist.</p>
+
+</html>

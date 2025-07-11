@@ -1,0 +1,15 @@
+<div class="ce-header">
+    <f:if condition="{header}">
+        <f:render partial="Header/Header" arguments="{_all}" />
+    </f:if>
+    
+    <f:render partial="Header/SubHeader" arguments="{
+        subheader: subheader,
+        layout: layout,
+        positionClass: '{f:if(condition: header_position, then: \'ce-header-position-{header_position}\')}',
+        default: settings.defaultHeaderType}" />
+    
+    <f:render partial="Header/Date" arguments="{
+        date: date,
+        positionClass: '{f:if(condition: header_position, then: \'ce-header-position-{header_position}\')}'}" />
+</div> 

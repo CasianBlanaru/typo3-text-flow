@@ -1,0 +1,22 @@
+<f:if condition="{subheader}">
+    <f:switch expression="{layout}">
+        <f:case value="1">
+            <h2>{subheader}</h2>
+        </f:case>
+        <f:case value="2">
+            <h3>{subheader}</h3>
+        </f:case>
+        <f:case value="3">
+            <h4>{subheader}</h4>
+        </f:case>
+        <f:case value="4">
+            <h5>{subheader}</h5>
+        </f:case>
+        <f:case value="5">
+            <h6>{subheader}</h6>
+        </f:case>
+        <f:defaultCase>
+            <h3>{subheader}</h3>
+        </f:defaultCase>
+    </f:switch>
+</f:if> 
