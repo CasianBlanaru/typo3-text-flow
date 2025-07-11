@@ -5,12 +5,6 @@
     "keywords": ["typo3", "extension", "text", "hyphenation", "typography", "text-flow"],
     "homepage": "https://github.com/tpwd/typo3-text-flow",
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://gitlab.tpwd.de/tpwd/typo3-text-flow.git"
-        }
-    ],
     "authors": [
         {
             "name": "TPWD AG",
